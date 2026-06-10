@@ -1,0 +1,167 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+
+/* Global background override for HTML and body */
+html,
+body {
+  background-color: #f9f1f0 !important;
+}
+
+/* Match navbar and footer with background (optional) */
+.navbar,
+.footer {
+  background-color: #f9f1f0 !important;
+}
+/* --------------------
+   Footer Text & Link Visibility Fix
+---------------------- */
+.footer {
+  background-color: #ddd8e7 !important; /* <-- Add this line */
+  color: #333 !important;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer a {
+  color: #333 !important;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #000 !important;
+  text-decoration: underline;
+}
+
+/* --------------------
+   Additional Utility (Optional)
+---------------------- */
+
+/* Remove box shadow from navbar */
+.navbar {
+  box-shadow: none !important;
+}
+/* Shift logo slightly to the right */
+.navbar__logo {
+  margin-left: 6rem;
+}
+/* Style for center heading section (hero) */
+.hero--primary {
+  background-color: transparent !important;
+  color: #000;
+}
+
+/* Adjust hero button appearance */
+.button.button--secondary.button--lg {
+  background-color: #f2f2f2;
+  color: #2e8555;
+  border: 1px solid #ccc;
+}
+
+.button.button--secondary.button--lg:hover {
+  background-color: #e6e6e6;
+}
+
+/* Make sure page content doesn't blend into background */
+.main-wrapper {
+  background-color: #f9f1f0;
+}
+
+/* Optional: Improve spacing at bottom of homepage */
+.footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+
+
+
+/* Custom styling for large secondary buttons */
+.button.button--secondary.button--lg {
+  background-color: #ffffff;         /* white background */
+  color: #3C232B;                    /* dark text color */
+  border: 1px solid #3C232B;         /* dark border */
+  box-shadow: none;                 /* remove shadow if any */
+  font-weight: 600;                 /* optional: makes text bolder */
+}
+
+/* Optional: Hover effect to indicate interactivity */
+.button.button--secondary.button--lg:hover {
+  background-color: #f7f7f7;         /* slight grey on hover */
+  color: #3C232B;
+  border-color: #3C232B;
+}
+
+/* Make entire hero section full-width white with no gradient */
+.hero {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  padding: 4rem 2rem;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Clean up the container so it doesn't interfere */
+.hero .container {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Custom Footer Styles - Simplified Layout */
+.footer--custom {
+  background-color: #e6e1f0 !important; /* Light lavender background */
+  color: #333;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.footer__simple-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.footer__copyright {
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.footer__company-info {
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer--custom {
+    padding: 1.5rem 0;
+  }
+  
+  .footer__simple-content {
+    gap: 0.75rem;
+  }
+}
