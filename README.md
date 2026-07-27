@@ -21,6 +21,7 @@ Comprehensive developer documentation for **Rahva Raamat**, Estonia's largest bo
 3. **Build for Production:**
    ```powershell
    .\dev-start.ps1 -Build
+   
    ```
 
 4. **Clean Build Files:**
