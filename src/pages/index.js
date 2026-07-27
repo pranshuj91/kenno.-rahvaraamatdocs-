@@ -33,8 +33,9 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <CustomLayout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={siteConfig.title}
+      description="Developer guide for Estonia's largest bookstore platform — setup, architecture, APIs, and operations."
+      image="/img/og-social-card.jpg">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

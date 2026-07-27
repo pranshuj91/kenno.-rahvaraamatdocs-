@@ -76,8 +76,27 @@ const config = {
         disableSwitch: true,
         respectPrefersColorScheme: false,
       },
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // Open Graph / social preview image (1200x630 recommended)
+      image: 'img/og-social-card.jpg',
+      metadata: [
+        {name: 'twitter:card', content: 'summary_large_image'},
+        {
+          name: 'twitter:image',
+          content: 'https://kenno.gaincafe.com/img/og-social-card.jpg',
+        },
+        {
+          property: 'og:image',
+          content: 'https://kenno.gaincafe.com/img/og-social-card.jpg',
+        },
+        {
+          property: 'og:image:type',
+          content: 'image/jpeg',
+        },
+        {
+          property: 'og:image:alt',
+          content: 'Rahva Raamat Developer Documentation',
+        },
+      ],
       navbar: {
         title: '',//Rahva Raamat Website Setup & Developer Guide',
         logo: {
