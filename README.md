@@ -2,10 +2,142 @@
 
 Comprehensive developer documentation for **Rahva Raamat**, Estonia's largest bookstore chain and digital content provider. This documentation covers the complete e-commerce backend system that powers their hybrid retail platform.
 
-## 🚀 Quick Start
+## Docs architecture
 
+This site is a **Docusaurus** app. Markdown lives under `docs/`, and the left sidebar is driven by [`sidebars.js`](./sidebars.js). Categories are ordered for first-time developers: setup first, then domain topics.
 
-# test
+### How the sidebar is shown
+
+```text
+Navbar "Developer Docs"
+        │
+        ▼
+docusaurus.config.js
+  docs.sidebarPath → ./sidebars.js
+  themeConfig.docs.sidebar.hideable = true
+  themeConfig.docs.sidebar.autoCollapseCategories = true
+        │
+        ▼
+sidebars.js  (tutorialSidebar)
+  ordered categories + doc ids
+        │
+        ▼
+docs/<category>/<file>.md
+  each page has frontmatter: id, title, sidebar_label
+        │
+        ▼
+Docs layout: collapsible/hideable left sidebar + article pane
+```
+
+| Piece | Role |
+|---|---|
+| [`docs/`](./docs) | All documentation pages (markdown) |
+| [`sidebars.js`](./sidebars.js) | Category order, labels, and which doc `id`s appear |
+| [`docusaurus.config.js`](./docusaurus.config.js) | Wires the sidebar, hideable toggle, auto-collapse |
+| Frontmatter `id` | Stable doc id used by the sidebar (must match) |
+
+**Sidebar behavior**
+
+- Categories in `sidebars.js` render as expandable groups in the left nav.
+- `collapsed: false` on **Getting Started** keeps that group open by default.
+- `autoCollapseCategories: true` closes other groups when you open one (cleaner reading).
+- `hideable: true` adds a control to collapse the whole sidebar so the article uses full width.
+
+### Folder → sidebar map
+
+| `docs/` folder | Sidebar category | Purpose |
+|---|---|---|
+| `intro.md` + `reference/PROJECT_OVERVIEW` | Introduction / Overview | What the platform is |
+| `setup-guide/` (+ structure/config links) | 1. Getting Started | First-time local / Docker setup |
+| `authentication/` | 2. Authentication | Roles, login, registration |
+| `commerce-ordering/` | 3. Commerce & Ordering | Orders, payments, pricing, stock |
+| `core/` | 4. Core Platform | Queues, notifications |
+| `integrations/` | 5. Integrations | NAV, Kafka, Elasticsearch |
+| `reference/` (admin/api/console) | 6. Admin & API | Back-office and HTTP APIs |
+| `deployment/` | 7. Deployment & Testing | Release, tests, backups |
+| `monitoring/` | 8. Monitoring & Ops | Logs, cron, security, stats |
+| `hotline-and-oidc/` | 9. Hotline & OIDC | Hotline + OpenID Connect |
+| `faq/` | 10. FAQ & Help | Troubleshoot and contribute |
+
+### Newcomer reading path
+
+```mermaid
+flowchart TD
+  intro[Introduction] --> overview[Project Overview]
+  overview --> setup[1 Getting Started]
+  setup --> auth[2 Authentication]
+  auth --> commerce[3 Commerce and Ordering]
+  commerce --> core[4 Core Platform]
+  core --> integ[5 Integrations]
+  integ --> adminApi[6 Admin and API]
+  adminApi --> deploy[7 Deployment and Testing]
+  deploy --> ops[8 Monitoring and Ops]
+  ops --> hotline[9 Hotline and OIDC]
+  hotline --> faq[10 FAQ]
+
+  setup --> s1[Local Setup Roadmap]
+  s1 --> s2[Docker or Environment Setup]
+  s2 --> s3[Database Schema]
+  s3 --> s4[Configuration]
+```
+
+1. Local Setup Roadmap  
+2. Project Structure  
+3. Docker Setup / Environment Setup  
+4. Database Schema  
+5. Configuration Files  
+6. Deployment Guide  
+7. Auth + Order Purchase Flow  
+
+### Backend product architecture (for context)
+
+```mermaid
+flowchart LR
+  subgraph clients [Clients]
+    web[Web / Mobile]
+    staff[Admin users]
+  end
+
+  subgraph apps [Yii2 apps]
+    admin[admin]
+    api[api]
+    console[console]
+  end
+
+  common[common shared domain]
+  db[(MySQL)]
+  redis[(Redis)]
+  es[Elasticsearch]
+  nav[NAV ERP]
+  pay[Payments]
+  kafka[Kafka]
+
+  web --> api
+  staff --> admin
+  admin --> common
+  api --> common
+  console --> common
+  common --> db
+  common --> redis
+  common --> es
+  console --> nav
+  console --> kafka
+  api --> pay
+```
+
+**Layers:** `admin` (back-office) · `api` (HTTP) · `console` (cron/sync) · `common` (shared models and integrations)
+
+### Cursor Docs Architecture canvas
+
+An interactive placement checklist and architecture view was authored as a Cursor Canvas:
+
+- File: `canvases/docs-architecture.canvas.tsx` (in the Cursor project workspace)
+- Open it beside chat in Cursor to review category counts, newcomer path, and folder placement status.
+
+The diagrams and tables above are the same architecture, kept in this README so GitHub readers see it without Cursor.
+
+## Quick Start
+
 ### Local Development (Windows)
 
 1. **Install Dependencies:**
