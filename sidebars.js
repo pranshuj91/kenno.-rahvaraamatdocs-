@@ -5,12 +5,36 @@ const sidebars = {
   tutorialSidebar: [
     {
       type: 'doc',
-      id: 'intro', // from docs/Intro.md
+      id: 'intro',
+      label: 'Introduction',
     },
     {
+      type: 'doc',
+      id: 'reference/PROJECT_OVERVIEW',
+      label: 'Project Overview',
+    },
+
+    // ---------- First-time setup ----------
+    {
       type: 'category',
-      label: 'Setup Guide',
+      label: '1. Getting Started',
+      collapsed: false,
       items: [
+        {
+          type: 'doc',
+          id: 'setup-guide/LOCAL_SETUP',
+          label: 'Local Setup Roadmap',
+        },
+        {
+          type: 'doc',
+          id: 'setup-guide/DOCKER_SETUP',
+          label: 'Docker Setup',
+        },
+        {
+          type: 'doc',
+          id: 'core/STRUCTURE',
+          label: 'Project Structure',
+        },
         {
           type: 'doc',
           id: 'setup-guide/ENVIRONMENT_SETUP',
@@ -21,23 +45,257 @@ const sidebars = {
           id: 'setup-guide/DATABASE_SCHEMA',
           label: 'Database Schema',
         },
+        {
+          type: 'doc',
+          id: 'reference/CONFIGURATION_FILES',
+          label: 'Configuration Files',
+        },
+        {
+          type: 'doc',
+          id: 'reference/CONFIGURATION',
+          label: 'Configuration Reference',
+        },
+        {
+          type: 'doc',
+          id: 'setup-guide/MIGRATION',
+          label: 'Migration Guide',
+        },
+        {
+          type: 'doc',
+          id: 'setup-guide/LEGACY_INSTALLATION',
+          label: 'Legacy Installation',
+        },
       ],
     },
+
+    // ---------- Auth ----------
     {
       type: 'category',
-      label: 'Authentication',
+      label: '2. Authentication',
       items: [
         {
           type: 'doc',
           id: 'authentication/AUTHENTICATION_AUTHORIZATION',
-          label: 'Authentication Authorization',
+          label: 'Auth & Authorization',
+        },
+        {
+          type: 'doc',
+          id: 'authentication/REGISTRATION_FLOW',
+          label: 'Registration Flow',
+        },
+        {
+          type: 'doc',
+          id: 'core/CORE_MODELS',
+          label: 'Login Flow / Core Models',
         },
       ],
     },
+
+    // ---------- Commerce ----------
     {
       type: 'category',
-      label: 'Deployment',
+      label: '3. Commerce & Ordering',
       items: [
+        {
+          type: 'category',
+          label: 'Orders & Checkout',
+          items: [
+            {
+              type: 'doc',
+              id: 'commerce-ordering/ecommerce-integration-guide',
+              label: 'Ecommerce Integration Guide',
+            },
+            {
+              type: 'doc',
+              id: 'commerce-ordering/order-purchase-flow',
+              label: 'Order Purchase Flow',
+            },
+            {
+              type: 'doc',
+              id: 'commerce-ordering/order-placement',
+              label: 'Order Management',
+            },
+            {
+              type: 'doc',
+              id: 'commerce-ordering/order-handling-by-client-type',
+              label: 'Order Handling by Client Type',
+            },
+            {
+              type: 'doc',
+              id: 'commerce-ordering/basket-management',
+              label: 'Basket Management',
+            },
+            {
+              type: 'doc',
+              id: 'commerce-ordering/checkout-process',
+              label: 'Checkout Process',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Payments',
+          items: [
+            {
+              type: 'doc',
+              id: 'commerce-ordering/payment-system',
+              label: 'Payment System',
+            },
+            {
+              type: 'doc',
+              id: 'commerce-ordering/payment-overview',
+              label: 'Payment Overview',
+            },
+            {
+              type: 'doc',
+              id: 'commerce-ordering/payment-integration',
+              label: 'Payment Integration',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Catalog & Pricing',
+          items: [
+            {
+              type: 'doc',
+              id: 'commerce-ordering/pricing',
+              label: 'Pricing Logic',
+            },
+            {
+              type: 'doc',
+              id: 'commerce-ordering/availability',
+              label: 'Availability',
+            },
+            {
+              type: 'doc',
+              id: 'commerce-ordering/availability-sync',
+              label: 'Availability Sync',
+            },
+            {
+              type: 'doc',
+              id: 'commerce-ordering/subscription-management',
+              label: 'Subscription Management',
+            },
+            {
+              type: 'doc',
+              id: 'commerce-ordering/shipping-integration',
+              label: 'Shipping Integration',
+            },
+          ],
+        },
+      ],
+    },
+
+    // ---------- Core platform ----------
+    {
+      type: 'category',
+      label: '4. Core Platform',
+      items: [
+        {
+          type: 'doc',
+          id: 'core/QUEUE_SYSTEM',
+          label: 'Queue System',
+        },
+        {
+          type: 'doc',
+          id: 'core/NOTIFICATIONS',
+          label: 'Email & SMS Notifications',
+        },
+      ],
+    },
+
+    // ---------- Integrations ----------
+    {
+      type: 'category',
+      label: '5. Integrations',
+      items: [
+        {
+          type: 'doc',
+          id: 'integrations/EXTERNAL_INTEGRATIONS',
+          label: 'External Product Integrations',
+        },
+        {
+          type: 'doc',
+          id: 'integrations/NAV_INTEGRATION',
+          label: 'NAV ERP Integration',
+        },
+        {
+          type: 'doc',
+          id: 'integrations/INTEGRATION_RECONCILIATION',
+          label: 'Integration Reconciliation',
+        },
+        {
+          type: 'doc',
+          id: 'integrations/KAFKA_EVENTS',
+          label: 'Kafka Events',
+        },
+        {
+          type: 'doc',
+          id: 'integrations/ELASTICSEARCH_SPOOL',
+          label: 'Elasticsearch Spool',
+        },
+      ],
+    },
+
+    // ---------- Admin & API ----------
+    {
+      type: 'category',
+      label: '6. Admin & API',
+      items: [
+        {
+          type: 'doc',
+          id: 'reference/ADMIN_PANEL',
+          label: 'Admin Panel Guide',
+        },
+        {
+          type: 'doc',
+          id: 'reference/ADMIN_MODULE',
+          label: 'Admin Module Overview',
+        },
+        {
+          type: 'doc',
+          id: 'reference/API_DOCUMENTATION',
+          label: 'API Documentation',
+        },
+        {
+          type: 'doc',
+          id: 'reference/API_OVERVIEW',
+          label: 'API Overview',
+        },
+        {
+          type: 'doc',
+          id: 'reference/CONSOLE_COMMANDS',
+          label: 'Console Commands',
+        },
+        {
+          type: 'doc',
+          id: 'reference/CONSOLE_COMMANDS_SUMMARY',
+          label: 'Console Commands Summary',
+        },
+        {
+          type: 'doc',
+          id: 'reference/REDIRECTS',
+          label: 'URL Redirects',
+        },
+        {
+          type: 'doc',
+          id: 'reference/SITEMAP',
+          label: 'Sitemap Generation',
+        },
+      ],
+    },
+
+    // ---------- Deploy ----------
+    {
+      type: 'category',
+      label: '7. Deployment & Testing',
+      items: [
+        {
+          type: 'doc',
+          id: 'deployment/DEPLOYMENT_GUIDE',
+          label: 'Deployment Guide',
+        },
         {
           type: 'doc',
           id: 'deployment/TESTING',
@@ -45,19 +303,31 @@ const sidebars = {
         },
         {
           type: 'doc',
-          id: 'deployment/DEPLOYMENT_GUIDE',
-          label: 'Deployment Guide',
+          id: 'deployment/TESTS_OVERVIEW',
+          label: 'Tests Overview',
+        },
+        {
+          type: 'doc',
+          id: 'deployment/BACKUPS',
+          label: 'Backups',
         },
       ],
     },
+
+    // ---------- Monitoring ----------
     {
       type: 'category',
-      label: 'Monitoring',
+      label: '8. Monitoring & Operations',
       items: [
         {
           type: 'doc',
           id: 'monitoring/MONITORING_LOGGING',
-          label: 'Monitoring Logging',
+          label: 'Monitoring & Logging',
+        },
+        {
+          type: 'doc',
+          id: 'monitoring/LOG_MANAGEMENT',
+          label: 'Log Management',
         },
         {
           type: 'doc',
@@ -69,58 +339,51 @@ const sidebars = {
           id: 'monitoring/PERFORMANCE',
           label: 'Performance',
         },
+        {
+          type: 'doc',
+          id: 'monitoring/CRON_JOBS',
+          label: 'Cron Jobs',
+        },
+        {
+          type: 'doc',
+          id: 'monitoring/CLEANUP_JOBS',
+          label: 'Cleanup Jobs',
+        },
+        {
+          type: 'doc',
+          id: 'monitoring/STATISTICS',
+          label: 'Statistics',
+        },
       ],
     },
+
+    // ---------- Hotline ----------
     {
       type: 'category',
-      label: 'Core',
+      label: '9. Hotline & OIDC',
       items: [
         {
           type: 'doc',
-          id: 'core/CORE_MODELS',
-          label: 'Core Models',
+          id: 'hotline-and-oidc/Hotline-OIDC-Documentation',
+          label: 'Hotline & OIDC Docs',
+        },
+        {
+          type: 'doc',
+          id: 'hotline-and-oidc/OIDC_SERVER',
+          label: 'OIDC Server',
         },
       ],
     },
+
+    // ---------- FAQ ----------
     {
       type: 'category',
-      label: 'Reference',
-      items: [
-        {
-          type: 'doc',
-          id: 'reference/PROJECT_OVERVIEW',
-          label: 'Project Overview',
-        },
-        {
-          type: 'doc',
-          id: 'reference/API_DOCUMENTATION',
-          label: 'API Documentation',
-        },
-        {
-          type: 'doc',
-          id: 'reference/ADMIN_PANEL',
-          label: 'Admin Panel',
-        },
-        {
-          type: 'doc',
-          id: 'reference/CONSOLE_COMMANDS',
-          label: 'Console Commands',
-        },
-        {
-          type: 'doc',
-          id: 'reference/CONFIGURATION',
-          label: 'Configuration',
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'FAQ',
+      label: '10. FAQ & Help',
       items: [
         {
           type: 'doc',
           id: 'faq/FAQ_TROUBLESHOOTING',
-          label: 'FAQ Troubleshooting',
+          label: 'FAQ & Troubleshooting',
         },
         {
           type: 'doc',
@@ -132,52 +395,10 @@ const sidebars = {
           id: 'faq/CONTRIBUTING',
           label: 'Contributing',
         },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Commerce / Ordering',
-      items: [
         {
           type: 'doc',
-          id: 'Commerce  Ordering/ecommerce-integration-guide',
-          label: 'Ecommerce Integration Guide',
-        },
-        {
-          type: 'doc',
-          id: 'Commerce  Ordering/order-placement',
-          label: 'Order Management',
-        },
-        {
-          type: 'doc',
-          id: 'Commerce  Ordering/basket-management',
-          label: 'Basket Management',
-        },
-        {
-          type: 'doc',
-          id: 'Commerce  Ordering/checkout-process',
-          label: 'Checkout Process',
-        },
-        {
-          type: 'doc',
-          id: 'Commerce  Ordering/payment-integration',
-          label: 'Payment Integration',
-        },
-        {
-          type: 'doc',
-          id: 'Commerce  Ordering/shipping-integration',
-          label: 'Shipping Integration',
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Hotline & OIDC',
-      items: [
-        {
-          type: 'doc',
-          id: 'hotline-and-oidc/Hotline-OIDC-Documentation',
-          label: 'Hotline OIDC Documentation',
+          id: 'faq/LICENSE',
+          label: 'License',
         },
       ],
     },
@@ -185,4 +406,3 @@ const sidebars = {
 };
 
 module.exports = sidebars;
-

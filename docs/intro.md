@@ -46,33 +46,38 @@ Our platform addresses the complex challenges of managing a hybrid retail busine
 - E-book DRM protection with LCP
 - Progress tracking and shelf management
 
-## Getting Started
+## Documentation map (category-wise)
 
-This documentation is organized into several sections:
+Follow this order if you are new to the project:
 
-1. **[Environment Setup](./setup-guide/02-ENVIRONMENT_SETUP.md)** - Environment setup and database configuration
-2. **[Core Models](./core/04-CORE_MODELS.md)** - Understanding the data models and relationships
-3. **[API Documentation](./reference/05-API_DOCUMENTATION.md)** - Complete API reference
-4. **[Authentication](./authentication/09-AUTHENTICATION_AUTHORIZATION.md)** - Security and authorization
-5. **[Deployment](./deployment/11-DEPLOYMENT_GUIDE.md)** - Production deployment guide
-6. **[Monitoring](./monitoring/12-MONITORING_LOGGING.md)** - System monitoring and logging
+1. **[Getting Started](./setup-guide/LOCAL_SETUP.md)** — local setup roadmap (start here)
+2. **[Project Structure](./core/STRUCTURE.md)** — admin / api / console / common layout
+3. **[Environment Setup](./setup-guide/02-ENVIRONMENT_SETUP.md)** — install tools and run locally
+4. **[Database Schema](./setup-guide/03-DATABASE_SCHEMA.md)** — tables and relationships
+5. **[Authentication](./authentication/09-AUTHENTICATION_AUTHORIZATION.md)** — roles and security
+6. **[Commerce & Ordering](./commerce-ordering/ORDER_PURCHASE_FLOW.md)** — basket, checkout, payments
+7. **[Integrations](./integrations/EXTERNAL_INTEGRATIONS.md)** — NAV, Kafka, Elasticsearch
+8. **[Admin & API](./reference/06-ADMIN_PANEL.md)** — admin panel and HTTP APIs
+9. **[Deployment & Testing](./deployment/11-DEPLOYMENT_GUIDE.md)** — release and tests
+10. **[Monitoring & Operations](./monitoring/12-MONITORING_LOGGING.md)** — logs, cron, cleanup
 
 ## Technology Stack
 
-- **Backend**: PHP/Laravel
-- **Database**: MySQL/PostgreSQL
+- **Backend**: PHP / Yii2
+- **Database**: MySQL
 - **Search**: Elasticsearch
 - **Cache**: Redis
 - **Storage**: AWS S3
 - **Media**: Wowza Media Server
-- **Payment**: Multiple Estonian banks (PSD2)
+- **Payment**: EveryPay / Estonian banks (PSD2)
 
 ## Quick Start
 
-1. Follow the [Environment Setup](./setup-guide/02-ENVIRONMENT_SETUP.md) guide
-2. Configure the [Database Schema](./setup-guide/03-DATABASE_SCHEMA.md)
-3. Review the [Project Overview](./reference/01-PROJECT_OVERVIEW.md) for architecture details
-4. Explore the [API Documentation](./reference/05-API_DOCUMENTATION.md) for integration
+1. Open the [Local Setup Roadmap](./setup-guide/LOCAL_SETUP.md)
+2. Read [Project Structure](./core/STRUCTURE.md)
+3. Follow [Environment Setup](./setup-guide/02-ENVIRONMENT_SETUP.md)
+4. Configure [Database Schema](./setup-guide/03-DATABASE_SCHEMA.md) and [Configuration Files](./reference/CONFIGURATION_FILES.md)
+5. Review [Project Overview](./reference/01-PROJECT_OVERVIEW.md) and [API Documentation](./reference/05-API_DOCUMENTATION.md)
 
 ## Support
 

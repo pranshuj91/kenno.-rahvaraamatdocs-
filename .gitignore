@@ -8,6 +8,9 @@
 .docusaurus
 .cache-loader
 
+# Backend source reference (docs already copied into /docs)
+/rahvaraamat-backend
+
 # Misc
 .DS_Store
 .env.local

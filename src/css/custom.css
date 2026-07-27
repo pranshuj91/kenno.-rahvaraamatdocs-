@@ -165,3 +165,106 @@ body {
     gap: 0.75rem;
   }
 }
+
+/* --------------------
+   Docs Sidebar - collapsible & readable
+---------------------- */
+
+/* Sidebar surface */
+.theme-doc-sidebar-container {
+  background-color: #ffffff;
+  border-right: 1px solid #ece4e2 !important;
+}
+
+/* Menu spacing and type scale */
+.menu {
+  padding: 1rem 0.75rem !important;
+  font-size: 0.9rem;
+}
+
+.menu__list .menu__list {
+  margin-top: 0.15rem;
+}
+
+.menu__link {
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  line-height: 1.45;
+}
+
+/* Category labels stand out from doc links */
+.menu__list-item-collapsible > .menu__link {
+  font-weight: 600;
+  color: #3c232b;
+}
+
+/* Active doc clearly highlighted */
+.menu__link--active:not(.menu__link--sublist) {
+  background-color: #f3ebe9;
+  font-weight: 600;
+}
+
+/* Collapse caret easier to hit */
+.menu__caret,
+.menu__link--sublist-caret:after {
+  opacity: 0.7;
+}
+
+/* Sidebar hide button (from hideable option) */
+button[title='Collapse sidebar'] {
+  border-top: 1px solid #ece4e2 !important;
+}
+
+/* --------------------
+   Docs content - easier reading
+---------------------- */
+
+/* Comfortable measure and rhythm for markdown pages */
+.theme-doc-markdown {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.theme-doc-markdown p,
+.theme-doc-markdown li {
+  color: #333;
+}
+
+.theme-doc-markdown h1 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.theme-doc-markdown h2 {
+  font-size: 1.5rem;
+  margin-top: 2.25rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #ece4e2;
+}
+
+.theme-doc-markdown h3 {
+  font-size: 1.2rem;
+  margin-top: 1.75rem;
+}
+
+/* Keep long code lines scrollable, not overflowing */
+.theme-doc-markdown pre {
+  border-radius: 8px;
+}
+
+/* Tables shouldn't feel cramped */
+.theme-doc-markdown table th,
+.theme-doc-markdown table td {
+  padding: 0.6rem 0.9rem;
+}
+
+/* Docs pages get a clean white reading surface */
+.docs-wrapper .main-wrapper,
+.docs-doc-page main {
+  background-color: #ffffff;
+}
+
+/* Breadcrumbs a bit quieter */
+.theme-doc-breadcrumbs {
+  margin-bottom: 1.25rem;
+}

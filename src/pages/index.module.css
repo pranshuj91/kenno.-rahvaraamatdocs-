@@ -4,17 +4,39 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 5rem 1.5rem 4.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #fdf0f4, #e7ecf8); /* soft pink to light blue */
-  color: #111111; /* dark text for readability */
+}
+
+.heroBanner :global(.hero__title) {
+  font-size: 2.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 56rem;
+  margin: 0 auto 1rem;
+}
+
+.heroBanner :global(.hero__subtitle) {
+  font-size: 1.15rem;
+  color: #5a5a5a;
+  max-width: 38rem;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 3rem 1.25rem 2.5rem;
+  }
+
+  .heroBanner :global(.hero__title) {
+    font-size: 2rem;
+  }
+
+  .heroBanner :global(.hero__subtitle) {
+    font-size: 1rem;
   }
 }
 
@@ -23,20 +45,5 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 2.25rem;
 }
-
-.button {
-  background-color: #8c4799; /* Rahva Raamat purple */
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
-
-.button:hover {
-  background-color: #732d84;
-}
-

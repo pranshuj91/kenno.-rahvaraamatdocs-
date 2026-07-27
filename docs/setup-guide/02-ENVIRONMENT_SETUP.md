@@ -1,4 +1,4 @@
-id: ENVIRONMENT_SETUP
+﻿id: ENVIRONMENT_SETUP
 title: ENVIRONMENT SETUP
 # Enviroment Local Setup Guide
 
@@ -281,7 +281,7 @@ php init
 
 ### Configuration Files to Edit:
 
-1. **`composer.json`** - PHP version requirements (currently >=8.0.0)
+1. **`composer.json`** - PHP version requirements (currently &gt;=8.0.0)
 2. **`environments/dev/common/config/main-local.php`** - Database, Redis, Elasticsearch, AWS credentials
 3. **`environments/dev/common/config/params-local.php`** - Application parameters
 4. **`environments/dev/admin/config/main-local.php`** - Admin panel specific configurations
@@ -465,7 +465,7 @@ It assumes:
 - **Project is already installed** (dependencies, DB, migrations) and works via CLI.
 - You are **not** using Docker/nginx, but want a quick local setup using `php -S`.
 
-If you want the officially supported setup instead, see **`README.md`** (Docker‑based) and **`doocumentation/LOCAL_SETUP.md`**.
+If you want the officially supported setup instead, see **`README.md`** (Docker‑based) and **`./LOCAL_SETUP.md`**.
 
 ---
 
@@ -637,3 +637,5 @@ If you want to match the production‑like environment used by the project autho
    - `http://localhost:8080/admin-panel`
 
 In that setup, the web server knows how to map `/admin-panel` to `admin/web`, so CSS and JS work out of the box without changing `baseUrl`.
+
+
