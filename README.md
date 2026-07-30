@@ -8,6 +8,7 @@ This site is a **Docusaurus** app. Markdown lives under `docs/`, and the left si
 
 ### How the sidebar is shown
 
+
 ```text
 Navbar "Developer Docs"
         │
