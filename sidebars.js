@@ -286,10 +286,76 @@ const sidebars = {
       ],
     },
 
+    // ---------- Infrastructure (production + staging findings) ----------
+    {
+      type: 'category',
+      label: '7. Infrastructure & Production',
+      collapsed: false,
+      items: [
+        {
+          type: 'doc',
+          id: 'infrastructure/INFRASTRUCTURE_OVERVIEW',
+          label: 'Overview',
+        },
+        {
+          type: 'category',
+          label: 'Production',
+          items: [
+            {
+              type: 'doc',
+              id: 'infrastructure/IN-005-PRODUCTION-SERVER-ARCHITECTURE',
+              label: 'IN-005 Server Architecture',
+            },
+            {
+              type: 'doc',
+              id: 'infrastructure/IN-001-SSL-CERTIFICATE-MANAGEMENT',
+              label: 'IN-001 SSL Certificates',
+            },
+            {
+              type: 'doc',
+              id: 'infrastructure/IN-002-PM2-PROCESS-MANAGEMENT',
+              label: 'IN-002 PM2 Processes',
+            },
+            {
+              type: 'doc',
+              id: 'infrastructure/IN-006-MONITORING-ALERTING',
+              label: 'IN-006 Monitoring & Alerting',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Staging',
+          items: [
+            {
+              type: 'doc',
+              id: 'infrastructure/IN-005-STAGING-SERVER-ARCHITECTURE',
+              label: 'IN-005 Server Architecture',
+            },
+            {
+              type: 'doc',
+              id: 'infrastructure/IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING',
+              label: 'IN-001 SSL Certificates',
+            },
+            {
+              type: 'doc',
+              id: 'infrastructure/IN-002-PM2-PROCESS-MANAGEMENT-STAGING',
+              label: 'IN-002 PM2 Processes',
+            },
+            {
+              type: 'doc',
+              id: 'infrastructure/IN-006-MONITORING-ALERTING-STAGING',
+              label: 'IN-006 Monitoring & Alerting',
+            },
+          ],
+        },
+      ],
+    },
+
     // ---------- Deploy ----------
     {
       type: 'category',
-      label: '7. Deployment & Testing',
+      label: '8. Deployment & Testing',
       items: [
         {
           type: 'doc',
@@ -317,7 +383,7 @@ const sidebars = {
     // ---------- Monitoring ----------
     {
       type: 'category',
-      label: '8. Monitoring & Operations',
+      label: '9. Monitoring & Operations',
       items: [
         {
           type: 'doc',
@@ -360,7 +426,7 @@ const sidebars = {
     // ---------- Hotline ----------
     {
       type: 'category',
-      label: '9. Hotline & OIDC',
+      label: '10. Hotline & OIDC',
       items: [
         {
           type: 'doc',
@@ -378,7 +444,7 @@ const sidebars = {
     // ---------- FAQ ----------
     {
       type: 'category',
-      label: '10. FAQ & Help',
+      label: '11. FAQ & Help',
       items: [
         {
           type: 'doc',

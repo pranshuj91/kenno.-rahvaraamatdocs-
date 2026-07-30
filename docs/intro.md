@@ -58,8 +58,9 @@ Follow this order if you are new to the project:
 6. **[Commerce & Ordering](./commerce-ordering/ORDER_PURCHASE_FLOW.md)** — basket, checkout, payments
 7. **[Integrations](./integrations/EXTERNAL_INTEGRATIONS.md)** — NAV, Kafka, Elasticsearch
 8. **[Admin & API](./reference/06-ADMIN_PANEL.md)** — admin panel and HTTP APIs
-9. **[Deployment & Testing](./deployment/11-DEPLOYMENT_GUIDE.md)** — release and tests
-10. **[Monitoring & Operations](./monitoring/12-MONITORING_LOGGING.md)** — logs, cron, cleanup
+9. **[Infrastructure & Production](./infrastructure/INFRASTRUCTURE_OVERVIEW.md)** — SSL, PM2, server, monitoring (IN-xxx)
+10. **[Deployment & Testing](./deployment/11-DEPLOYMENT_GUIDE.md)** — release and tests
+11. **[Monitoring & Operations](./monitoring/12-MONITORING_LOGGING.md)** — logs, cron, cleanup
 
 ## Technology Stack
 
