@@ -1,0 +1,35 @@
+.gapSection {
+  padding: 3.5rem 0 4rem;
+  background-color: #ffffff;
+  border-top: 1px solid #ece4e2;
+}
+
+.gapInner {
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.gapTitle {
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+  color: #3c232b;
+}
+
+.gapText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0 auto 1.75rem;
+}
+
+@media (max-width: 996px) {
+  .gapSection {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .gapTitle {
+    font-size: 1.45rem;
+  }
+}

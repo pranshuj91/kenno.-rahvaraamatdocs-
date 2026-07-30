@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
 import CustomLayout from '@site/src/components/CustomLayout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import GapDocumentsSection from '@site/src/components/GapDocumentsSection';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -23,6 +23,11 @@ function HomepageHeader() {
             to="/docs/intro">
             Rahvaraamat E-commerce Backend Documentation
           </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/gaps/intro">
+            Gap Documents
+          </Link>
         </div>
       </div>
     </header>
@@ -39,6 +44,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <GapDocumentsSection />
       </main>
     </CustomLayout>
   );

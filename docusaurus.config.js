@@ -61,6 +61,19 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'gaps',
+        path: 'gap-docs',
+        routeBasePath: 'gaps',
+        sidebarPath: './sidebarsGaps.js',
+        editUrl: undefined,
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
@@ -109,6 +122,13 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Developer Docs',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'gapsSidebar',
+            docsPluginId: 'gaps',
+            position: 'left',
+            label: 'Gap Documents',
           },
           {
             to: '/about',
