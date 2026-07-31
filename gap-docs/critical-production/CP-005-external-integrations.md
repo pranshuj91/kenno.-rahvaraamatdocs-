@@ -16,18 +16,18 @@ sidebar_label: CP-005 External Integrations
 | Code location | TBD |
 | Assigned to | — |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/integrations/EXTERNAL_INTEGRATIONS.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/integrations/EXTERNAL_INTEGRATIONS.md`
+### Developer Docs — `docs/integrations/EXTERNAL_INTEGRATIONS.md`
 
 # External Product Integrations
 

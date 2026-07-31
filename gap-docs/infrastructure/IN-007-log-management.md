@@ -16,20 +16,20 @@ sidebar_label: IN-007 Log Management
 | Code location | TBD |
 | Assigned to | — |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/monitoring/LOG_MANAGEMENT.md`
 - `docs/monitoring/12-MONITORING_LOGGING.md`
 - `docs/infrastructure/IN-006-MONITORING-ALERTING.md` (Zone Apache log retention)
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/monitoring/LOG_MANAGEMENT.md`
+### Developer Docs — `docs/monitoring/LOG_MANAGEMENT.md`
 
 # Log Management
 
@@ -158,7 +158,7 @@ The `archive/logs` command is wired into the system cron schedule — see [Cron 
 
 ---
 
-### From `docs/monitoring/12-MONITORING_LOGGING.md`
+### Developer Docs — `docs/monitoring/12-MONITORING_LOGGING.md`
 
 id: MONITORING_LOGGING
 title: MONITORING LOGGING
@@ -647,7 +647,7 @@ mysql -u root -p -e "SHOW STATUS LIKE 'Threads_connected';" | awk '$2 > 80 {prin
 
 ---
 
-### From `docs/infrastructure/IN-006-MONITORING-ALERTING.md` (Zone Apache log retention)
+### Developer Docs — `docs/infrastructure/IN-006-MONITORING-ALERTING.md` (Zone Apache log retention)
 
 | Item | Value |
 |---|---|

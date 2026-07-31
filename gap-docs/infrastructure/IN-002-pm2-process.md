@@ -16,19 +16,19 @@ sidebar_label: IN-002 PM2 Process
 | Code location | Outside codebase / server |
 | Assigned to | — |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/infrastructure/IN-002-PM2-PROCESS-MANAGEMENT.md`
 - `docs/infrastructure/IN-002-PM2-PROCESS-MANAGEMENT-STAGING.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/infrastructure/IN-002-PM2-PROCESS-MANAGEMENT.md`
+### Developer Docs — `docs/infrastructure/IN-002-PM2-PROCESS-MANAGEMENT.md`
 
 
 # IN-002 — PM2 Process Management
@@ -75,7 +75,7 @@ Three long-running production services run under PM2 and are reported as **Activ
 
 ---
 
-### From `docs/infrastructure/IN-002-PM2-PROCESS-MANAGEMENT-STAGING.md`
+### Developer Docs — `docs/infrastructure/IN-002-PM2-PROCESS-MANAGEMENT-STAGING.md`
 
 
 # IN-002 — PM2 Process Management (Staging)

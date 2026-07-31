@@ -16,19 +16,19 @@ sidebar_label: OP-002 Admin Panel Modules
 | Code location | TBD |
 | Assigned to | — |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/reference/06-ADMIN_PANEL.md`
 - `docs/reference/ADMIN_MODULE.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under ``docs/``. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/reference/06-ADMIN_PANEL.md`
+### Developer Docs — `docs/reference/06-ADMIN_PANEL.md`
 
 id: ADMIN_PANEL
 title: ADMIN PANEL
@@ -1070,7 +1070,7 @@ This comprehensive guide covers all aspects of the Estonian e-commerce admin pan
 
 ---
 
-### From `docs/reference/ADMIN_MODULE.md`
+### Developer Docs — `docs/reference/ADMIN_MODULE.md`
 
 # Admin module — detailed overview
 

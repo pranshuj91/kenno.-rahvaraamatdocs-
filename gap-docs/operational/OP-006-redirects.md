@@ -16,18 +16,18 @@ sidebar_label: OP-006 Redirects
 | Code location | TBD |
 | Assigned to | — |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/reference/REDIRECTS.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/reference/REDIRECTS.md`
+### Developer Docs — `docs/reference/REDIRECTS.md`
 
 # External URL & Redirect Management
 

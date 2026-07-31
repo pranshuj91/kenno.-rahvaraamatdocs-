@@ -16,20 +16,20 @@ sidebar_label: OP-001 Deployment & Release
 | Code location | — |
 | Assigned to | — |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/deployment/11-DEPLOYMENT_GUIDE.md`
 - `docs/setup-guide/DOCKER_SETUP.md`
 - `docs/setup-guide/MIGRATION.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under ``docs/``. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/deployment/11-DEPLOYMENT_GUIDE.md`
+### Developer Docs — `docs/deployment/11-DEPLOYMENT_GUIDE.md`
 
 # Deployment guide — environments and release process
 
@@ -136,7 +136,7 @@ Notes
 
 ---
 
-### From `docs/setup-guide/DOCKER_SETUP.md`
+### Developer Docs — `docs/setup-guide/DOCKER_SETUP.md`
 
 ### Project setup with Docker
 
@@ -190,7 +190,7 @@ See also
 
 ---
 
-### From `docs/setup-guide/MIGRATION.md`
+### Developer Docs — `docs/setup-guide/MIGRATION.md`
 
 # This file describes changes applied to file system structure during codebase migration
 

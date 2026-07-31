@@ -16,18 +16,18 @@ sidebar_label: IB-004 Notifications
 | Code location | TBD |
 | Assigned to | — |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/core/NOTIFICATIONS.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under ``docs/``. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/core/NOTIFICATIONS.md`
+### Developer Docs — `docs/core/NOTIFICATIONS.md`
 
 # Email & SMS Notifications
 

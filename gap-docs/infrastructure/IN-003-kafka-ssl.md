@@ -17,18 +17,18 @@ sidebar_label: IN-003 Kafka SSL
 | Assigned to | — |
 | Notes | No dedicated Kafka SSL page exists; content below is copied only from matching sections already in docs/ |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/integrations/KAFKA_EVENTS.md` (Configuration section)
 - `docs/reference/08-CONFIGURATION.md` (apacheKafka component)
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 ---
 
-### From `docs/integrations/KAFKA_EVENTS.md` — Configuration
+### Developer Docs — `docs/integrations/KAFKA_EVENTS.md` — Configuration
 
 The system uses Apache Kafka (hosted on Aiven Cloud) with SSL encryption for publishing and consuming events related to audiobook/ebook usage.
 
@@ -47,7 +47,7 @@ Connection Provider notes SSL configuration for secure communication.
 
 ---
 
-### From `docs/reference/08-CONFIGURATION.md` — apacheKafka component
+### Developer Docs — `docs/reference/08-CONFIGURATION.md` — apacheKafka component
 
 ```
 'apacheKafka' => [

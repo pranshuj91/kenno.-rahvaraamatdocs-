@@ -11,10 +11,9 @@ export default function GapDocumentsSection() {
             Gap Documents
           </Heading>
           <p className={styles.gapText}>
-            A standalone tracker for documentation gaps — Critical Production,
-            Business, Operational, and Infrastructure items. Separate from
-            Developer Docs. Filled only where matching documentation already
-            exists on this site.
+            Gap topics are already covered in Developer Docs. This section gathers
+            them by ID — Critical Production, Business, Operational, and
+            Infrastructure — so you can review coverage and open each item in one place.
           </p>
           <Link
             className="button button--secondary button--lg"

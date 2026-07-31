@@ -16,18 +16,18 @@ sidebar_label: CP-001 Elasticsearch Spool
 | Code location | TBD |
 | Assigned to | Expert Dima |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/integrations/ELASTICSEARCH_SPOOL.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/integrations/ELASTICSEARCH_SPOOL.md`
+### Developer Docs — `docs/integrations/ELASTICSEARCH_SPOOL.md`
 
 # Elasticsearch Spool System
 

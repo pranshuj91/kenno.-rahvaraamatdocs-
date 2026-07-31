@@ -17,18 +17,18 @@ sidebar_label: OP-008 Feed Exporters
 | Assigned to | — |
 | Notes | No dedicated feed-exporter page exists; content below is copied only from matching sections already in docs/ |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/monitoring/CRON_JOBS.md` (Feed Export section)
 - `docs/reference/07-CONSOLE_COMMANDS.md` (FeedExporterController section)
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented. There is still no standalone full feed-exporter guide in this site.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place. A full standalone feed-exporter guide is not available yet.
 
 ---
 
-### From `docs/monitoring/CRON_JOBS.md` — Feed Export
+### Developer Docs — `docs/monitoring/CRON_JOBS.md` — Feed Export
 
 ### Feed Export
 - **Command:** `php yii feed-exporter/generate-csv`
@@ -42,7 +42,7 @@ sidebar_label: OP-008 Feed Exporters
 
 ---
 
-### From `docs/reference/07-CONSOLE_COMMANDS.md` — FeedExporterController
+### Developer Docs — `docs/reference/07-CONSOLE_COMMANDS.md` — FeedExporterController
 
 #### **FeedExporterController** (`console/controllers/FeedExporterController.php`)
 Data feed export operations.

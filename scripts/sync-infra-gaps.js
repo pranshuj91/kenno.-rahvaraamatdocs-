@@ -38,15 +38,15 @@ function buildGap({ outRel, id, title, sidebar, meta, sources }) {
     `| Code location | ${meta.codeLocation} |`,
     '| Assigned to | — |',
     '',
-    '## Source files used',
+    '## Related Developer Docs',
     '',
   ];
   for (const s of sources) parts.push(`- \`${s}\``);
   parts.push(
     '',
-    '## Documentation (copied from Developer Docs)',
+    '## Documentation',
     '',
-    '> Content below is taken from existing files under `docs/`. Nothing invented.',
+    '> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.',
     ''
   );
   for (const s of sources) {
@@ -57,7 +57,7 @@ function buildGap({ outRel, id, title, sidebar, meta, sources }) {
     }
     let body = stripFrontmatter(fs.readFileSync(abs, 'utf8')).trimEnd();
     body = rewriteLinks(body, s);
-    parts.push('', '---', '', `### From \`${s}\``, '', body, '');
+    parts.push('', '---', '', `### Developer Docs — \`${s}\``, '', body, '');
   }
   const out = path.join(root, outRel);
   fs.writeFileSync(out, parts.join('\n') + '\n');

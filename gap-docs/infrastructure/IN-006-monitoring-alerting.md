@@ -16,20 +16,20 @@ sidebar_label: IN-006 Monitoring & Alerting
 | Code location | TBD |
 | Assigned to | — |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/infrastructure/IN-006-MONITORING-ALERTING.md`
 - `docs/infrastructure/IN-006-MONITORING-ALERTING-STAGING.md`
 - `docs/monitoring/12-MONITORING_LOGGING.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/infrastructure/IN-006-MONITORING-ALERTING.md`
+### Developer Docs — `docs/infrastructure/IN-006-MONITORING-ALERTING.md`
 
 
 # IN-006 — Monitoring & Alerting
@@ -130,7 +130,7 @@ Production monitoring today is primarily through **Zone.ee** (web, MariaDB, reso
 
 ---
 
-### From `docs/infrastructure/IN-006-MONITORING-ALERTING-STAGING.md`
+### Developer Docs — `docs/infrastructure/IN-006-MONITORING-ALERTING-STAGING.md`
 
 
 # IN-006 — Monitoring & Alerting (Staging)
@@ -223,7 +223,7 @@ Staging monitoring is primarily through **Zone.ee** resource and Redis metrics, 
 
 ---
 
-### From `docs/monitoring/12-MONITORING_LOGGING.md`
+### Developer Docs — `docs/monitoring/12-MONITORING_LOGGING.md`
 
 id: MONITORING_LOGGING
 title: MONITORING LOGGING

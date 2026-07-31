@@ -16,20 +16,20 @@ sidebar_label: IB-001 Payment Gateway
 | Code location | TBD |
 | Assigned to | — |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/commerce-ordering/PAYMENT_SYSTEM.md`
 - `docs/commerce-ordering/PAYMENT.md`
 - `docs/commerce-ordering/Payment Integration.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/commerce-ordering/PAYMENT_SYSTEM.md`
+### Developer Docs — `docs/commerce-ordering/PAYMENT_SYSTEM.md`
 
 # Payment System
 
@@ -163,7 +163,7 @@ Admin interface for managing:
 
 ---
 
-### From `docs/commerce-ordering/PAYMENT.md`
+### Developer Docs — `docs/commerce-ordering/PAYMENT.md`
 
 # Payment System
 
@@ -429,7 +429,7 @@ Can set the next values:
 
 ---
 
-### From `docs/commerce-ordering/Payment Integration.md`
+### Developer Docs — `docs/commerce-ordering/Payment Integration.md`
 
 # Payment Integration
 

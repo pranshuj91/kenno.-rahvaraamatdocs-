@@ -16,20 +16,20 @@ sidebar_label: CP-002 Cron Jobs
 | Code location | TBD |
 | Assigned to | Tomas |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/monitoring/CRON_JOBS.md`
 - `docs/infrastructure/IN-006-MONITORING-ALERTING.md`
 - `docs/infrastructure/IN-006-MONITORING-ALERTING-STAGING.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under ``docs/``. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/monitoring/CRON_JOBS.md`
+### Developer Docs — `docs/monitoring/CRON_JOBS.md`
 
 # Cron Jobs & Scheduled Tasks
 
@@ -208,7 +208,7 @@ Run `php yii help sync` to see the full list of available handlers.
 
 ---
 
-### From `docs/infrastructure/IN-006-MONITORING-ALERTING.md`
+### Developer Docs — `docs/infrastructure/IN-006-MONITORING-ALERTING.md`
 
 # IN-006 — Monitoring & Alerting
 
@@ -282,7 +282,7 @@ Production monitoring today is primarily through **Zone.ee** (web, MariaDB, reso
 
 ---
 
-### From `docs/infrastructure/IN-006-MONITORING-ALERTING-STAGING.md`
+### Developer Docs — `docs/infrastructure/IN-006-MONITORING-ALERTING-STAGING.md`
 
 # IN-006 — Monitoring & Alerting (Staging)
 

@@ -16,20 +16,20 @@ sidebar_label: IN-005 Server Architecture
 | Code location | TBD |
 | Assigned to | — |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/infrastructure/IN-005-PRODUCTION-SERVER-ARCHITECTURE.md`
 - `docs/infrastructure/IN-005-STAGING-SERVER-ARCHITECTURE.md`
 - `docs/infrastructure/INFRASTRUCTURE_OVERVIEW.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/infrastructure/IN-005-PRODUCTION-SERVER-ARCHITECTURE.md`
+### Developer Docs — `docs/infrastructure/IN-005-PRODUCTION-SERVER-ARCHITECTURE.md`
 
 
 # IN-005 — Production Server Architecture
@@ -133,7 +133,7 @@ Production runs on **Zone.ee Dedicated Webhosting** (`217.146.68.148`) under use
 
 ---
 
-### From `docs/infrastructure/IN-005-STAGING-SERVER-ARCHITECTURE.md`
+### Developer Docs — `docs/infrastructure/IN-005-STAGING-SERVER-ARCHITECTURE.md`
 
 
 # IN-005 — Staging Server Architecture
@@ -288,7 +288,7 @@ Staging runs on **Zone.ee PRO Webhosting** (`217.146.71.63`) under user `virt202
 
 ---
 
-### From `docs/infrastructure/INFRASTRUCTURE_OVERVIEW.md`
+### Developer Docs — `docs/infrastructure/INFRASTRUCTURE_OVERVIEW.md`
 
 
 # Infrastructure Overview

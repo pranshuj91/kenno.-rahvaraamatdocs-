@@ -17,18 +17,18 @@ sidebar_label: IB-002 Kafka Events
 | Assigned to | — |
 | Notes | Kafka controller is deprecated |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/integrations/KAFKA_EVENTS.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/integrations/KAFKA_EVENTS.md`
+### Developer Docs — `docs/integrations/KAFKA_EVENTS.md`
 
 # Kafka Event Streaming
 

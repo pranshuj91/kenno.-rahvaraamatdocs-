@@ -16,19 +16,19 @@ sidebar_label: IN-001 SSL Certificates
 | Code location | Outside codebase |
 | Assigned to | — |
 
-## Source files used
+## Related Developer Docs
 
 - `docs/infrastructure/IN-001-SSL-CERTIFICATE-MANAGEMENT.md`
 - `docs/infrastructure/IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md`
 
-## Documentation (copied from Developer Docs)
+## Documentation
 
-> Content below is taken from existing files under `docs/`. Nothing invented.
+> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 
 ---
 
-### From `docs/infrastructure/IN-001-SSL-CERTIFICATE-MANAGEMENT.md`
+### Developer Docs — `docs/infrastructure/IN-001-SSL-CERTIFICATE-MANAGEMENT.md`
 
 
 # IN-001 — SSL Certificate Management
@@ -75,7 +75,7 @@ Production HTTPS is **enabled** for `web.rahvaraamat.ee`, the certificate is **a
 
 ---
 
-### From `docs/infrastructure/IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md`
+### Developer Docs — `docs/infrastructure/IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md`
 
 
 # IN-001 — SSL Certificate Management (Staging)

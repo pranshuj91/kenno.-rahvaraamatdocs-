@@ -19,8 +19,8 @@ sidebar_label: OP-004 Search Functionality
 
 ## Documentation
 
-**Not filled.** Searched `docs/` for Elasticsearch query logic, autocomplete behaviour, scoring, and boosting. No matching documentation page was found.
+This gap is still open. Matching documentation for Elasticsearch query logic, autocomplete behaviour, scoring, and boosting has not been added to Developer Docs yet.
 
-Only related (not query-logic) pages exist:
+Related reading (indexing only, not query/scoring):
 
-- [Elasticsearch Spool](/docs/integrations/ELASTICSEARCH_SPOOL) — indexing queue only, not search query/scoring docs
+- [Elasticsearch Spool](/docs/integrations/ELASTICSEARCH_SPOOL)

@@ -19,6 +19,4 @@ sidebar_label: IN-004 Web Store SSL
 
 ## Documentation
 
-**Not filled.** Searched all of `docs/` for `ssl_enabled` / `sslEnabled`. No documentation of a per-web-store SSL flag was found.
-
-Do not invent schema or behaviour here until a real source doc exists.
+This gap is still open. Documentation for a per-web-store SSL flag (`ssl_enabled` / `sslEnabled`) has not been added to Developer Docs yet.
