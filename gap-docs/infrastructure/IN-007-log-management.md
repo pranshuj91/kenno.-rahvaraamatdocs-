@@ -20,6 +20,7 @@ sidebar_label: IN-007 Log Management
 
 - `docs/monitoring/LOG_MANAGEMENT.md`
 - `docs/monitoring/12-MONITORING_LOGGING.md`
+- `docs/infrastructure/IN-006-MONITORING-ALERTING.md` (Zone Apache log retention)
 
 ## Documentation (copied from Developer Docs)
 
@@ -643,3 +644,16 @@ mysql -u root -p -e "SHOW STATUS LIKE 'Threads_connected';" | awk '$2 > 80 {prin
 ```
 
 
+
+---
+
+### From `docs/infrastructure/IN-006-MONITORING-ALERTING.md` (Zone Apache log retention)
+
+| Item | Value |
+|---|---|
+| Location | `/logs` folder on the host |
+| Behaviour | Real-time; HTTP and HTTPS logged separately; PHP errors in a single file |
+| Retention | Rotated daily at **00:00 UTC**; kept for **4 days** |
+| Longer history | Custom crontab archive, or order past logs from Zone (`info@zone.ee`) up to ~3 months |
+
+Applies to both production (`web.rahvaraamat.ee`) and staging (`dev.rahvaraamat.ee`). Full monitoring context: [IN-006 Monitoring & Alerting](/gaps/infrastructure/IN-006-monitoring-alerting).

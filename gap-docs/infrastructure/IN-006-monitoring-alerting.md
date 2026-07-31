@@ -1,4 +1,4 @@
-﻿---
+---
 id: IN-006-monitoring-alerting
 title: IN-006 — Monitoring & Alerting
 sidebar_label: IN-006 Monitoring & Alerting
@@ -31,9 +31,12 @@ sidebar_label: IN-006 Monitoring & Alerting
 
 ### From `docs/infrastructure/IN-006-MONITORING-ALERTING.md`
 
+
 # IN-006 — Monitoring & Alerting
 
-Confirmed production monitoring, logs, and scheduled-job signals.
+Confirmed production monitoring, logs, and scheduled-job signals for `web.rahvaraamat.ee`.
+
+Source: Zone.ee portal screenshots, 31 July 2026.
 
 ## Server monitoring (Zone.ee)
 
@@ -52,6 +55,8 @@ Available metrics include:
 - Connections
 - Keys
 
+Observed (approx.): ~2.60 GiB used of ~92.9 GiB limit; ~247 ops/s mean.
+
 ## Available logs
 
 - Apache Logs
@@ -59,17 +64,26 @@ Available metrics include:
 - SSH Authentication Logs
 - Webserver Email Logs
 
+### Apache log retention (Zone.ee)
+
+| Item | Value |
+|---|---|
+| Location | `/logs` folder on the host |
+| Behaviour | Real-time; HTTP and HTTPS logged separately; PHP errors in a single file |
+| Retention | Rotated daily at **00:00 UTC**; kept for **4 days** |
+| Longer history | Custom crontab archive, or order past logs from Zone (`info@zone.ee`) up to ~3 months |
+
 ## Scheduled jobs
 
-Production currently has **52 cron jobs**.
+Production currently has **56 / 100** cron jobs configured.
 
 Examples include:
 
-- Order Processing
-- Product Sync
-- Product Price Sync
+- Order Processing / Order Sync / Order Shipping
+- Product Sync / Product Price Sync / Large Product Import
+- Availability Sync + main stock import
 - Customer Price Group Sync
-- Business Client Sync
+- Business / Wholesale Client Sync
 - Gift Card Sync
 - Sales History Sync
 - Campaign Sync
@@ -78,16 +92,18 @@ Examples include:
 - Elastic Spool
 - Daily Report Operations
 - Daily Health Report
-- Currency Coefficient Fetch
-- Session Cleanup
-- Back in Stock Notifications
-- Loyalty Program Jobs
+- Currency Coefficient Fetch (ECB)
+- Session / Action Cleanup
+- Cleanup Failed Logins & Archive Logs
+- Wish list email / Loyalty program jobs
+- Cardoza Product importer
+- Image Files Sync
 
 ## Elasticsearch
 
 Confirmed:
 
-- Elasticsearch runs under **PM2**
+- Elasticsearch runs under **PM2** (`elasticsearch-7.16.2`)
 - An **Elastic Spool** cron job exists
 
 ## Health reporting
@@ -96,28 +112,51 @@ Confirmed:
 
 - A **Daily Health Report** cron job exists
 
+## Backups (Zone panel)
+
+Zone Backups UI exposes Applications / Files / Databases / Mailboxes. The Applications (WordPress snapshot) tab showed **no applications installed** at capture time. File/database backup behaviour is also covered under [Backups](/docs/deployment/BACKUPS).
+
+## Related pages
+
+- [IN-005 Production Server Architecture](/docs/infrastructure/IN-005-PRODUCTION-SERVER-ARCHITECTURE)
+- [IN-002 PM2 Processes](/docs/infrastructure/IN-002-PM2-PROCESS-MANAGEMENT)
+- Gap mirror: [IN-006 Monitoring & Alerting](/gaps/infrastructure/IN-006-monitoring-alerting)
+- Related gap: [IN-007 Log Management](/gaps/infrastructure/IN-007-log-management)
+
 ## Summary
 
-Production monitoring today is primarily through **Zone.ee** (web, MariaDB, resources) plus **Redis** metrics and standard host logs (Apache, FTP, SSH, email). Background work is driven by **52 cron jobs**, including Elastic Spool and Daily Health Report. Elasticsearch itself is managed via PM2.
+Production monitoring today is primarily through **Zone.ee** (web, MariaDB, resources) plus **Redis** metrics and standard host logs (Apache, FTP, SSH, email). Apache logs are retained **4 days**. Background work is driven by **56 cron jobs**, including Elastic Spool and Daily Health Report. Elasticsearch itself is managed via PM2.
 
 
 ---
 
 ### From `docs/infrastructure/IN-006-MONITORING-ALERTING-STAGING.md`
 
+
 # IN-006 — Monitoring & Alerting (Staging)
 
-Confirmed staging monitoring, logs, and scheduled-job signals.
+Confirmed staging monitoring, logs, and scheduled-job signals for `dev.rahvaraamat.ee`.
+
+Source: Zone.ee portal screenshots, 31 July 2026.
 
 ## Server monitoring (Zone.ee)
 
 Zone.ee provides monitoring for:
 
-- Resource Usage
+- Resource Usage (~85% used at capture)
 - Redis Memory
 - Redis Operations
 - Redis Connections
 - Redis Keys
+- Webalizer usage statistics for `dev.rahvaraamat.ee`
+
+## Quota notifications
+
+| Notification | Frequency | Status |
+|---|---|---|
+| Storage quota (90%) | Once a day | Active |
+| Email quota | Once a day | Inactive |
+| Inode quota | Once a day | Inactive |
 
 ## Available logs
 
@@ -128,31 +167,40 @@ Zone.ee provides:
 - SSH Authentication Logs
 - Webserver Email Logs
 
+### Apache log retention (Zone.ee)
+
+| Item | Value |
+|---|---|
+| Location | `/logs` folder on the host |
+| Behaviour | Real-time; HTTP and HTTPS logged separately; PHP errors in a single file |
+| Retention | Rotated daily at **00:00 UTC**; kept for **4 days** |
+| Longer history | Custom crontab archive, or order past logs from Zone (`info@zone.ee`) up to ~3 months |
+
 ## Scheduled jobs
 
-Staging currently has **16 configured cron jobs** (16/16 slots in use).
+Staging currently has **16 configured cron jobs** (16/16 slots in use — limit reached).
 
 ### Active examples
 
-- Order Process & Upload Manually Added Chapters
-- Order Sync
-- Cleanup Failed Orders
-- Product Sync
-- Product Post & Client Post Sync
-- Product Price Sync
-- Product Discount Group Sync
-- Availability Sync
-- Business Client Discount Group Sync
-- Customer Price Group Sync
-- Gift Card Sync
-- Cleanup Failed Logins & Archive Logs
-- Elastic Spool
+- Order Process & Upload Manually Added Chapters (`*/2 6-23 * * *`)
+- Order Sync (`00,30 6-23 * * *`)
+- Cleanup Failed Orders (`*/17 8-23 * * *`)
+- Product Sync (`42 13 * * *`)
+- Product Post & Client Post Sync (`0 8-22 * * *`)
+- Product Price Sync (`30 7 * * *`)
+- Product Discount Group Sync (`20 22 * * *`)
+- Availability Sync & Buroomaailm import (`30 3 * * *`)
+- Business Client Discount Group Sync (`30 8 * * *`)
+- Customer Price Group Sync (`20 22 * * *`)
+- Gift Card Sync (`0 4 * * *`)
+- Cleanup Failed Logins & Archive Logs (`30 6 * * 6`)
+- Elastic Spool (`*/7 8-23 * * *`)
 
 ### Inactive jobs
 
-- Redirect Relations
-- Retail & Business Client Sync
-- Sales Statistics & Sales Top Sync
+- Redirect Relations (`* * * * *`)
+- Retail & Business Client Sync (`42 8-22 * * *`)
+- Sales Statistics & Sales Top Sync (`45 5 * * *`)
 
 ## Elasticsearch
 
@@ -161,9 +209,16 @@ Confirmed:
 - Elasticsearch is managed by **PM2**
 - An **Elastic Spool** cron job exists
 
+## Related pages
+
+- [IN-005 Staging Server Architecture](/docs/infrastructure/IN-005-STAGING-SERVER-ARCHITECTURE)
+- [IN-002 PM2 (Staging)](/docs/infrastructure/IN-002-PM2-PROCESS-MANAGEMENT-STAGING)
+- Gap mirror: [IN-006 Monitoring & Alerting](/gaps/infrastructure/IN-006-monitoring-alerting)
+- Related gap: [IN-007 Log Management](/gaps/infrastructure/IN-007-log-management)
+
 ## Summary
 
-Staging monitoring is primarily through **Zone.ee** resource and Redis metrics, plus Apache / FTP / SSH / email logs. Cron capacity is fully used (**16/16**). Elasticsearch runs under PM2 with an Elastic Spool cron present. Some sync/reporting jobs are configured but inactive.
+Staging monitoring is primarily through **Zone.ee** resource and Redis metrics, Webalizer stats, and Apache / FTP / SSH / email logs. Apache logs are retained **4 days**. Storage quota notification at **90%** is active. Cron capacity is fully used (**16/16**). Elasticsearch runs under PM2 with an Elastic Spool cron present. Some sync/reporting jobs are configured but inactive.
 
 
 ---
@@ -652,5 +707,4 @@ df -h | awk '$5 > 90 {print "High disk usage: " $1 " " $5}'
 # Database connection threshold (80%)
 mysql -u root -p -e "SHOW STATUS LIKE 'Threads_connected';" | awk '$2 > 80 {print "High DB connections"}'
 ```
-
 

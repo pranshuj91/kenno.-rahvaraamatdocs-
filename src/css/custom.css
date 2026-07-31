@@ -204,10 +204,113 @@ body {
   font-weight: 600;
 }
 
-/* Collapse caret easier to hit */
-.menu__caret,
-.menu__link--sublist-caret:after {
-  opacity: 0.7;
+/* --------------------
+   Sidebar collapse chevrons
+
+   Docusaurus draws the caret two ways: a `.menu__caret` button when a category
+   also links somewhere, or an `::after` on the category label otherwise. Both
+   are normalised below so the icons share one size and one right-hand gutter.
+---------------------- */
+
+:root {
+  /* Matches the horizontal padding of every other sidebar link */
+  --rr-caret-gutter: 0.75rem;
+  --rr-caret-hit-size: 40px;
+  --rr-caret-icon-size: 20px;
+
+  /* Chevron points up at rest; Docusaurus rotates it 180deg / 90deg */
+  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%233c232b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 15.5 12 8.5 20 15.5"/></svg>');
+}
+
+.menu__list-item-collapsible {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.menu__list-item-collapsible > .menu__link {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: var(--rr-caret-hit-size);
+}
+
+/* Leaf links stay slightly tighter so the list keeps an even rhythm */
+.menu__link:not(.menu__link--sublist) {
+  min-height: 36px;
+}
+
+.menu__link--sublist-caret {
+  padding-right: var(--rr-caret-gutter);
+}
+
+/* Button caret: a real 40x40 target, pulled in so its icon lands on the
+   same vertical line as the inline caret above */
+.menu__caret {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: var(--rr-caret-hit-size);
+  height: var(--rr-caret-hit-size);
+  min-width: var(--rr-caret-hit-size);
+  padding: 0;
+  margin-right: calc(
+    var(--rr-caret-gutter) -
+      (var(--rr-caret-hit-size) - var(--rr-caret-icon-size)) / 2
+  );
+  border-radius: 6px;
+}
+
+.menu__caret:hover {
+  background-color: #f3ebe9;
+}
+
+.menu__caret:focus-visible,
+.menu__link--sublist:focus-visible {
+  outline: 2px solid #3c232b;
+  outline-offset: -2px;
+}
+
+/* One icon size and rotation curve for both variants */
+.menu__caret::before,
+.menu__link--sublist-caret::after {
+  flex: 0 0 auto;
+  width: var(--rr-caret-icon-size);
+  height: var(--rr-caret-icon-size);
+  min-width: var(--rr-caret-icon-size);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: var(--rr-caret-icon-size) var(--rr-caret-icon-size);
+  transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Inline caret shares the label's row, so it needs pushing to the edge */
+.menu__link--sublist-caret::after {
+  margin-left: auto;
+}
+
+/* Even vertical spacing between every row */
+.menu__list-item:not(:first-child) {
+  margin-top: 0.25rem;
+}
+
+/* Comfortable touch targets on small screens */
+@media (max-width: 996px) {
+  :root {
+    --rr-caret-hit-size: 44px;
+  }
+
+  .menu__link:not(.menu__link--sublist) {
+    min-height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu__caret::before,
+  .menu__link--sublist-caret::after {
+    transition: none;
+  }
 }
 
 /* Sidebar hide button (from hideable option) */

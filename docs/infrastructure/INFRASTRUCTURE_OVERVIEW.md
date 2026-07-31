@@ -34,3 +34,26 @@ This section documents **confirmed findings** for Rahva Raamat infrastructure. P
 4. **Monitoring & Alerting (IN-006)** — what is already monitored  
 
 Only verified details from the Zone.ee portal / current findings are documented here.
+
+## Environments (quick map)
+
+| Role in docs | Domain | Zone package | Hosting ID |
+|---|---|---|---|
+| Production | `web.rahvaraamat.ee` | Dedicated | 103107 (`virt102759`) |
+| Staging | `dev.rahvaraamat.ee` | PRO | 19723 (`virt20240`) |
+
+:::note
+A Zone screenshot pack may label folders the opposite way (`prod/` = `dev…`, `staging/` = `web…`). Prefer the domain names above.
+:::
+
+## Gap Documents
+
+Mirrored gap pages (filled from these docs when content exists):
+
+- [IN-001 SSL Certificate](/gaps/infrastructure/IN-001-ssl-certificate)
+- [IN-002 PM2 Process](/gaps/infrastructure/IN-002-pm2-process)
+- [IN-005 Server Architecture](/gaps/infrastructure/IN-005-server-architecture)
+- [IN-006 Monitoring & Alerting](/gaps/infrastructure/IN-006-monitoring-alerting)
+- [IN-007 Log Management](/gaps/infrastructure/IN-007-log-management)
+
+Still **Not Documented** in gaps: [IN-004 Web Store SSL](/gaps/infrastructure/IN-004-web-store-ssl) (no matching `/docs` content for per-store `ssl_enabled`).

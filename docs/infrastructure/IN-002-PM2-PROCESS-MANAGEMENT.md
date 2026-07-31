@@ -6,15 +6,17 @@ sidebar_label: IN-002 PM2 Processes
 
 # IN-002 — PM2 Process Management
 
-Confirmed production findings for processes managed by **PM2**.
+Confirmed production findings for processes managed by **PM2** on `web.rahvaraamat.ee`.
+
+Source: Zone.ee portal screenshots, 31 July 2026.
 
 ## PM2 managed processes
 
-| Process | Status |
-|---|---|
-| `elasticsearch-7.16.2` | Active |
-| `kafka-event-consumer` | Active |
-| `queue-listener` | Active |
+| Process | Status | Memory (observed) |
+|---|---|---|
+| `elasticsearch-7.16.2` | Active | ~204 MiB |
+| `kafka-event-consumer` | Active | ~1200 MiB |
+| `queue-listener` | Active | ~1024 MiB |
 
 ## PM2 configuration files
 
@@ -31,6 +33,13 @@ PM2 currently manages:
 - **Elasticsearch** service (`7.16.2`)
 - **Kafka Event Consumer**
 - **Queue Listener**
+
+Zone notes applications should listen on `localhost (127.0.0.1)` with port forwarding or `mod_proxy`.
+
+## Related pages
+
+- [IN-005 Production Server Architecture](./IN-005-PRODUCTION-SERVER-ARCHITECTURE.md)
+- Gap mirror: [IN-002 PM2 Process](/gaps/infrastructure/IN-002-pm2-process)
 
 ## Summary
 
