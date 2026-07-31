@@ -29,6 +29,7 @@ Use this page if you are setting up the Rahva Raamat backend for the **first tim
 
 ## Related quick links
 
+- [Onboarding Pack](./ONBOARDING.md) — KT, triage playbook, first 30 days
 - [Project Overview](../reference/01-PROJECT_OVERVIEW.md) — business context and architecture
 - [API Documentation](../reference/05-API_DOCUMENTATION.md) — HTTP API reference
 - [Admin Panel](../reference/06-ADMIN_PANEL.md) — back-office UI guide

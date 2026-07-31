@@ -50,17 +50,18 @@ Our platform addresses the complex challenges of managing a hybrid retail busine
 
 Follow this order if you are new to the project:
 
-1. **[Getting Started](./setup-guide/LOCAL_SETUP.md)** — local setup roadmap (start here)
-2. **[Project Structure](./core/STRUCTURE.md)** — admin / api / console / common layout
-3. **[Environment Setup](./setup-guide/02-ENVIRONMENT_SETUP.md)** — install tools and run locally
-4. **[Database Schema](./setup-guide/03-DATABASE_SCHEMA.md)** — tables and relationships
-5. **[Authentication](./authentication/09-AUTHENTICATION_AUTHORIZATION.md)** — roles and security
-6. **[Commerce & Ordering](./commerce-ordering/ORDER_PURCHASE_FLOW.md)** — basket, checkout, payments
-7. **[Integrations](./integrations/EXTERNAL_INTEGRATIONS.md)** — NAV, Kafka, Elasticsearch
-8. **[Admin & API](./reference/06-ADMIN_PANEL.md)** — admin panel and HTTP APIs
-9. **[Infrastructure & Production](./infrastructure/INFRASTRUCTURE_OVERVIEW.md)** — SSL, PM2, server, monitoring (IN-xxx)
-10. **[Deployment & Testing](./deployment/11-DEPLOYMENT_GUIDE.md)** — release and tests
-11. **[Monitoring & Operations](./monitoring/12-MONITORING_LOGGING.md)** — logs, cron, cleanup
+1. **[Onboarding Pack](./setup-guide/ONBOARDING.md)** — KT / delivery ownership (start here)
+2. **[Local Setup Roadmap](./setup-guide/LOCAL_SETUP.md)** — get the app running locally
+3. **[Project Structure](./core/STRUCTURE.md)** — admin / api / console / common layout
+4. **[Environment Setup](./setup-guide/02-ENVIRONMENT_SETUP.md)** — install tools and run locally
+5. **[Database Schema](./setup-guide/03-DATABASE_SCHEMA.md)** — tables and relationships
+6. **[Authentication](./authentication/09-AUTHENTICATION_AUTHORIZATION.md)** — roles and security
+7. **[Commerce & Ordering](./commerce-ordering/ORDER_PURCHASE_FLOW.md)** — basket, checkout, payments
+8. **[Integrations](./integrations/EXTERNAL_INTEGRATIONS.md)** — NAV, Kafka, Elasticsearch
+9. **[Admin & API](./reference/06-ADMIN_PANEL.md)** — admin panel and HTTP APIs
+10. **[Infrastructure & Production](./infrastructure/INFRASTRUCTURE_OVERVIEW.md)** — SSL, PM2, server, monitoring (IN-xxx)
+11. **[Deployment & Testing](./deployment/11-DEPLOYMENT_GUIDE.md)** — release and tests
+12. **[Monitoring & Operations](./monitoring/12-MONITORING_LOGGING.md)** — logs, cron, cleanup
 
 ## Technology Stack
 
@@ -74,11 +75,12 @@ Follow this order if you are new to the project:
 
 ## Quick Start
 
-1. Open the [Local Setup Roadmap](./setup-guide/LOCAL_SETUP.md)
-2. Read [Project Structure](./core/STRUCTURE.md)
-3. Follow [Environment Setup](./setup-guide/02-ENVIRONMENT_SETUP.md)
-4. Configure [Database Schema](./setup-guide/03-DATABASE_SCHEMA.md) and [Configuration Files](./reference/CONFIGURATION_FILES.md)
-5. Review [Project Overview](./reference/01-PROJECT_OVERVIEW.md) and [API Documentation](./reference/05-API_DOCUMENTATION.md)
+1. Read the [Onboarding Pack](./setup-guide/ONBOARDING.md)
+2. Open the [Local Setup Roadmap](./setup-guide/LOCAL_SETUP.md)
+3. Read [Project Structure](./core/STRUCTURE.md)
+4. Follow [Environment Setup](./setup-guide/02-ENVIRONMENT_SETUP.md)
+5. Configure [Database Schema](./setup-guide/03-DATABASE_SCHEMA.md) and [Configuration Files](./reference/CONFIGURATION_FILES.md)
+6. Review [Project Overview](./reference/01-PROJECT_OVERVIEW.md) and [API Documentation](./reference/05-API_DOCUMENTATION.md)
 
 ## Support
 

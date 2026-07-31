@@ -22,6 +22,11 @@ const sidebars = {
       items: [
         {
           type: 'doc',
+          id: 'setup-guide/ONBOARDING',
+          label: 'Onboarding Pack',
+        },
+        {
+          type: 'doc',
           id: 'setup-guide/LOCAL_SETUP',
           label: 'Local Setup Roadmap',
         },
