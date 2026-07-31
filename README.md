@@ -1,5 +1,6 @@
 # Rahva Raamat Documentation
 
+
 Comprehensive developer documentation for **Rahva Raamat**, Estonia's largest bookstore chain and digital content provider. This documentation covers the complete e-commerce backend system that powers their hybrid retail platform.
 
 ## Docs architecture
