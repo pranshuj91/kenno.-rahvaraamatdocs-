@@ -60,7 +60,6 @@ Use the sidebar on the left, or the lists below, to open any gap page.
 
 ## Still open
 
-These two items do not yet have matching content in Developer Docs:
+This item does not yet have matching content in Developer Docs:
 
-- [OP-004 — Search Functionality](./operational/OP-004-search-functionality.md)
 - [IN-004 — Web Store SSL Settings](./infrastructure/IN-004-web-store-ssl.md)

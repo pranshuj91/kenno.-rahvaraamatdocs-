@@ -240,6 +240,16 @@ const sidebars = {
           id: 'integrations/ELASTICSEARCH_SPOOL',
           label: 'Elasticsearch Spool',
         },
+        {
+          type: 'doc',
+          id: 'integrations/SEARCH_FUNCTIONALITY',
+          label: 'Search Functionality',
+        },
+        {
+          type: 'doc',
+          id: 'integrations/ELASTICSEARCH_RELIABILITY_PLAN',
+          label: 'Elasticsearch Reliability',
+        },
       ],
     },
 

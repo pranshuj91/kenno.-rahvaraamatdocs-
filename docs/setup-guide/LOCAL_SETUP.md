@@ -34,4 +34,6 @@ Use this page if you are setting up the Rahva Raamat backend for the **first tim
 - [API Documentation](../reference/05-API_DOCUMENTATION.md) — HTTP API reference
 - [Admin Panel](../reference/06-ADMIN_PANEL.md) — back-office UI guide
 - [Elasticsearch Spool](../integrations/ELASTICSEARCH_SPOOL.md) — search import / spool jobs
+- [Search Functionality](../integrations/SEARCH_FUNCTIONALITY.md) — catalog search, autocomplete, ranking
+- [Elasticsearch Reliability](../integrations/ELASTICSEARCH_RELIABILITY_PLAN.md) — 503 downtime contract / QA
 - [Hotline & OIDC](../hotline-and-oidc/Hotline-OIDC-Documentation.md) — Hotline module and OpenID Connect

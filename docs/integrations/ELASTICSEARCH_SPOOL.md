@@ -170,3 +170,9 @@ php yii elastic/import
 php yii elastic/import-products
 ```
 
+## Related documentation
+
+- [Search Functionality](./SEARCH_FUNCTIONALITY.md) — storefront search, autocomplete, ranking, filters
+- [Elasticsearch Reliability Plan](./ELASTICSEARCH_RELIABILITY_PLAN.md) — 503 contract and downtime QA
+- Gap: [CP-001 Elasticsearch Spool](/gaps/critical-production/CP-001-elasticsearch-spool)
+

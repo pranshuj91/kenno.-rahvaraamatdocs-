@@ -1,41 +1,14 @@
 ---
-id: OP-004-search-functionality
-title: OP-004 — Search Functionality
-sidebar_label: OP-004 Search Functionality
+id: SEARCH_FUNCTIONALITY
+title: Search Functionality
+sidebar_label: Search Functionality
 ---
-
-# OP-004 — Search Functionality
-
-| Field | Value |
-|---|---|
-| Priority | Operational |
-| Category | Operational |
-| Gap item | Search Functionality |
-| Description | Elasticsearch queries, autocomplete, scoring — query logic, boosting, filters |
-| Documentation status | Documented |
-| Code location | API search / autocomplete / dynamic filters + console elastic commands |
-| Assigned to | — |
-
-## Related Developer Docs
-
-- `docs/integrations/SEARCH_FUNCTIONALITY.md`
-- `docs/integrations/ELASTICSEARCH_RELIABILITY_PLAN.md`
-- `docs/integrations/ELASTICSEARCH_SPOOL.md`
-
-## Documentation
-
-> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
-
-
----
-
-### Developer Docs — `docs/integrations/SEARCH_FUNCTIONALITY.md`
 
 # Search Functionality
 
 This document describes **all searching capabilities** in the ecommerce platform: how search works for customers and staff, what Elasticsearch is used for, what can be searched, how results stay up to date, and which console commands / cron jobs support search.
 
-It focuses on **behaviour and functionality**, not low-level implementation details. For indexing internals, see also [Elasticsearch Spool](/docs/integrations/ELASTICSEARCH_SPOOL) and [Elasticsearch Reliability Plan](/docs/integrations/ELASTICSEARCH_RELIABILITY_PLAN).
+It focuses on **behaviour and functionality**, not low-level implementation details. For indexing internals, see also [Elasticsearch Spool](./ELASTICSEARCH_SPOOL.md) and [Elasticsearch Reliability Plan](./ELASTICSEARCH_RELIABILITY_PLAN.md).
 
 ---
 
@@ -337,7 +310,7 @@ Queued actions are essentially: **save / update**, **delete**, or **full index**
 | **Command** | `php yii elastic/spool` |
 | **Schedule** | Frequent — every few minutes |
 | **Purpose** | Process queued search index updates |
-| **Documented in** | [Cron Jobs](/docs/monitoring/CRON_JOBS), [Elasticsearch Spool](/docs/integrations/ELASTICSEARCH_SPOOL) |
+| **Documented in** | [Cron Jobs](../monitoring/CRON_JOBS.md), [Elasticsearch Spool](./ELASTICSEARCH_SPOOL.md) |
 
 This is the main job that keeps storefront search fresh after catalog changes, imports, and admin edits.
 
@@ -374,7 +347,7 @@ Recommended ops cadence for the Elasticsearch health check is frequent (about ev
 | Normal day-to-day | Cron already runs `elastic/spool` |
 | After bulk catalog changes | Wait for spool, or selectively reindex the affected entity type |
 | After mapping / analyzer changes | Full or product reindex (`elastic/import` / `elastic/import-products`) |
-| After DB restore | Rebuild search indexes with `elastic/import` (see also [Backups](/docs/deployment/BACKUPS)) |
+| After DB restore | Rebuild search indexes with `elastic/import` (see also `BACKUPS.md`) |
 | Suspected stuck queue / ES issues | `health-check/elasticsearch`, then fix ES and run `elastic/spool` |
 
 ---
@@ -398,7 +371,7 @@ Important points:
 - While Elasticsearch is unhealthy, `elastic/spool` skips processing so the queue does not thrash.
 - Staging can force this degraded mode for QA (`forceSearchUnavailable` query/header when allowed in config). Keep that disabled in production.
 
-Details: [Elasticsearch Reliability Plan](/docs/integrations/ELASTICSEARCH_RELIABILITY_PLAN).
+Details: [Elasticsearch Reliability Plan](./ELASTICSEARCH_RELIABILITY_PLAN.md).
 
 ---
 
@@ -444,6 +417,22 @@ Does **not** include:
 
 ---
 
+## 14. Related Documentation
+
+| Document | Contents |
+|----------|----------|
+| [Elasticsearch Spool](./ELASTICSEARCH_SPOOL.md) | Indexing pipeline, spool table, providers, recovery |
+| [Elasticsearch Reliability Plan](./ELASTICSEARCH_RELIABILITY_PLAN.md) | 503 contract, force-degrade QA, health checks |
+| [Cron Jobs](../monitoring/CRON_JOBS.md) | Scheduled `elastic/spool` and other jobs |
+| [Console Commands](../reference/07-CONSOLE_COMMANDS.md) | Console command index |
+| [Backups](../deployment/BACKUPS.md) | Rebuilding Elasticsearch after DB restore |
+| [External Integrations](./EXTERNAL_INTEGRATIONS.md) | Imports → spool → search index |
+| [Admin Module](../reference/ADMIN_MODULE.md) | Admin changes flowing into search via spool |
+| [API Documentation](../reference/05-API_DOCUMENTATION.md) | High-level API notes (autocomplete / lists) |
+| Gap: [OP-004 Search Functionality](/gaps/operational/OP-004-search-functionality) | Gap tracker view of this topic |
+
+---
+
 ## 15. Quick Reference — Search-Related Commands
 
 ```bash
@@ -468,50 +457,3 @@ php yii health-check/elasticsearch --notify=0
 php yii product-ai-search-synonyms/generate-batch
 php yii product-ai-search-synonyms/verify
 ```
-
-
----
-
-### Developer Docs — `docs/integrations/ELASTICSEARCH_RELIABILITY_PLAN.md`
-
-# Elasticsearch Reliability & Downtime Reduction Plan
-
-**Status:** Priority / Backend + FE staging QA  
-**Date:** 2026-07-23 (updated 2026-07-28)
-
-## API contract (authoritative)
-
-| Item | Value |
-|------|--------|
-| Primary signal | **HTTP 503** |
-| Header | **`X-Search-Available: 0`** (bonus; CORS-exposed) |
-| Body message | `Search is temporarily unavailable. Please try again shortly.` |
-| Never | `200` + empty list for ES downtime |
-
-Applies to: `/product/search`, `/autocomplete`, `/product/autocomplete`, product dynamic filters, other ES-backed listing endpoints.
-
-## FE CORS note
-
-`X-Search-Available` is in `Access-Control-Expose-Headers` (same as `X-Pagination-*`).
-
-## Force degraded mode (staging QA)
-
-1. On staging API host set in `params-local.php`:
-   ```php
-   'allowForceSearchUnavailable' => true,
-   ```
-2. Call any search/autocomplete/filter URL with:
-   - query: `?forceSearchUnavailable=1`
-   - or header: `X-Force-Search-Unavailable: 1`
-3. Expect **503** + `X-Search-Available: 0`
-4. Retry without the flag → normal 200 when ES is healthy
-
-**Keep `allowForceSearchUnavailable` false in production.**
-
-## Backend changes shipped
-
-- ES timeouts + spool lock recovery + health-check cron command  
-- API ErrorHandler → 503 + header  
-- CORS expose `X-Search-Available`  
-- Autocomplete returns same 503 (not empty 200) on ES downtime  
-- Staging force-degrade flag for QA  

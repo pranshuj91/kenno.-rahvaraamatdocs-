@@ -57,7 +57,7 @@ Follow this order if you are new to the project:
 5. **[Database Schema](./setup-guide/03-DATABASE_SCHEMA.md)** — tables and relationships
 6. **[Authentication](./authentication/09-AUTHENTICATION_AUTHORIZATION.md)** — roles and security
 7. **[Commerce & Ordering](./commerce-ordering/ORDER_PURCHASE_FLOW.md)** — basket, checkout, payments
-8. **[Integrations](./integrations/EXTERNAL_INTEGRATIONS.md)** — NAV, Kafka, Elasticsearch
+8. **[Integrations](./integrations/EXTERNAL_INTEGRATIONS.md)** — NAV, Kafka, Elasticsearch ([Search Functionality](./integrations/SEARCH_FUNCTIONALITY.md), [Spool](./integrations/ELASTICSEARCH_SPOOL.md), [Reliability](./integrations/ELASTICSEARCH_RELIABILITY_PLAN.md))
 9. **[Admin & API](./reference/06-ADMIN_PANEL.md)** — admin panel and HTTP APIs
 10. **[Infrastructure & Production](./infrastructure/INFRASTRUCTURE_OVERVIEW.md)** — SSL, PM2, server, monitoring (IN-xxx)
 11. **[Deployment & Testing](./deployment/11-DEPLOYMENT_GUIDE.md)** — release and tests
