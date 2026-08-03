@@ -8,6 +8,14 @@ sidebar_label: Overview
 
 This section documents **confirmed findings** for Rahva Raamat infrastructure. Pages use investigation IDs (`IN-xxx`) and are split by **Production** and **Staging** so Ops and developers can find the same topic quickly.
 
+## Application-level SSL
+
+| ID | Topic | Page |
+|---|---|---|
+| IN-004 | Web Store SSL Settings (`ssl_enabled`) | [IN-004 Web Store SSL](./IN-004-WEB-STORE-SSL-SETTINGS.md) |
+
+Controls whether the app generates `http://` or `https://` storefront URLs. It does **not** manage server certificates (see IN-001 for that).
+
 ## Production
 
 | ID | Topic | Page |
@@ -29,11 +37,12 @@ This section documents **confirmed findings** for Rahva Raamat infrastructure. P
 ## Recommended reading order (per environment)
 
 1. **Server Architecture (IN-005)** — where the environment runs  
-2. **SSL Certificates (IN-001)** — HTTPS / TLS status  
-3. **PM2 Processes (IN-002)** — long-running services under PM2  
-4. **Monitoring & Alerting (IN-006)** — what is already monitored  
+2. **SSL Certificates (IN-001)** — HTTPS / TLS status on the host  
+3. **Web Store SSL (IN-004)** — app URL protocol (`ssl_enabled`)  
+4. **PM2 Processes (IN-002)** — long-running services under PM2  
+5. **Monitoring & Alerting (IN-006)** — what is already monitored  
 
-Only verified details from the Zone.ee portal / current findings are documented here.
+Only verified details from the Zone.ee portal / current findings (and confirmed application behaviour) are documented here.
 
 ## Environments (quick map)
 
@@ -52,8 +61,7 @@ Mirrored gap pages (filled from these docs when content exists):
 
 - [IN-001 SSL Certificate](/gaps/infrastructure/IN-001-ssl-certificate)
 - [IN-002 PM2 Process](/gaps/infrastructure/IN-002-pm2-process)
+- [IN-004 Web Store SSL](/gaps/infrastructure/IN-004-web-store-ssl)
 - [IN-005 Server Architecture](/gaps/infrastructure/IN-005-server-architecture)
 - [IN-006 Monitoring & Alerting](/gaps/infrastructure/IN-006-monitoring-alerting)
 - [IN-007 Log Management](/gaps/infrastructure/IN-007-log-management)
-
-Still **Not Documented** in gaps: [IN-004 Web Store SSL](/gaps/infrastructure/IN-004-web-store-ssl) (no matching `/docs` content for per-store `ssl_enabled`).

@@ -313,6 +313,11 @@ const sidebars = {
           label: 'Overview',
         },
         {
+          type: 'doc',
+          id: 'infrastructure/IN-004-WEB-STORE-SSL-SETTINGS',
+          label: 'IN-004 Web Store SSL',
+        },
+        {
           type: 'category',
           label: 'Production',
           items: [

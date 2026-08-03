@@ -1,33 +1,8 @@
 ---
-id: IN-004-web-store-ssl
+id: IN-004-WEB-STORE-SSL-SETTINGS
 title: IN-004 — Web Store SSL Settings
 sidebar_label: IN-004 Web Store SSL
 ---
-
-# IN-004 — Web Store SSL Settings
-
-| Field | Value |
-|---|---|
-| Priority | Infrastructure |
-| Category | Infrastructure |
-| Gap item | Web Store SSL Settings |
-| Description | SSL enabled flag per web store |
-| Documentation status | Documented |
-| Code location | `rr_web_store.ssl_enabled` / URL builders |
-| Assigned to | — |
-
-## Related Developer Docs
-
-- `docs/infrastructure/IN-004-WEB-STORE-SSL-SETTINGS.md`
-
-## Documentation
-
-> This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
-
-
----
-
-### Developer Docs — `docs/infrastructure/IN-004-WEB-STORE-SSL-SETTINGS.md`
 
 # IN-004 — Web Store SSL Settings
 
@@ -39,7 +14,7 @@ The web store supports both **HTTP** and **HTTPS** storefront URLs. Whether a st
 This setting only controls how application URLs are generated. It **does not** install, renew, or manage SSL certificates on the web server.
 :::
 
-For host-level certificates (Zone / Apache), see [IN-001 SSL Certificates (Production)](/docs/infrastructure/IN-001-SSL-CERTIFICATE-MANAGEMENT) and [IN-001 SSL (Staging)](/docs/infrastructure/IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING).
+For host-level certificates (Zone / Apache), see [IN-001 SSL Certificates (Production)](./IN-001-SSL-CERTIFICATE-MANAGEMENT.md) and [IN-001 SSL (Staging)](./IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md).
 
 ---
 
@@ -205,3 +180,9 @@ Generated Store URLs
 | Installs SSL Certificates | ❌ |
 | Renews SSL Certificates | ❌ |
 | Configures Web Server SSL | ❌ |
+
+## Related pages
+
+- [IN-001 SSL Certificate Management (Production)](./IN-001-SSL-CERTIFICATE-MANAGEMENT.md)
+- [IN-001 SSL Certificate Management (Staging)](./IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md)
+- Gap: [IN-004 Web Store SSL](/gaps/infrastructure/IN-004-web-store-ssl)

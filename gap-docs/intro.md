@@ -57,9 +57,3 @@ Use the sidebar on the left, or the lists below, to open any gap page.
 | [IN-005](./infrastructure/IN-005-server-architecture.md) | Server Architecture |
 | [IN-006](./infrastructure/IN-006-monitoring-alerting.md) | Monitoring & Alerting |
 | [IN-007](./infrastructure/IN-007-log-management.md) | Log Management |
-
-## Still open
-
-This item does not yet have matching content in Developer Docs:
-
-- [IN-004 — Web Store SSL Settings](./infrastructure/IN-004-web-store-ssl.md)
