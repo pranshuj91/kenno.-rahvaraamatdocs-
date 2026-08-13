@@ -1,0 +1,3 @@
+# Internal documentation — do not index
+User-agent: *
+Disallow: /

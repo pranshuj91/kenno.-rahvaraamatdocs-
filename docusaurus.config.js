@@ -53,7 +53,8 @@ const config = {
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: false ,
+        blog: false,
+        sitemap: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -92,6 +93,8 @@ const config = {
       // Open Graph / social preview image (1200x630 recommended)
       image: 'img/og-social-card.jpg',
       metadata: [
+        {name: 'robots', content: 'noindex, nofollow, noarchive'},
+        {name: 'googlebot', content: 'noindex, nofollow, noarchive'},
         {name: 'twitter:card', content: 'summary_large_image'},
         {
           name: 'twitter:image',
