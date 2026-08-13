@@ -3,8 +3,13 @@ id: LICENSE
 title: License
 sidebar_label: License
 ---
+
+## Yii Software LLC copyright
+
 Copyright © 2008 by Yii Software LLC (http://www.yiisoft.com)
 All rights reserved.
+
+## Redistribution terms
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -20,6 +25,8 @@ are met:
    contributors may be used to endorse or promote products derived
    from this software without specific prior written permission.
 
+## Disclaimer
+
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
 LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
@@ -32,4 +39,3 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
 LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
 ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-

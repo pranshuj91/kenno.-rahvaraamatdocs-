@@ -5,7 +5,11 @@ sidebar_label: Project Structure
 ---
 ### Project structure overview
 
-This project is a Yii2-based PHP application composed of multiple entry points and shared modules. The high-level layers are:
+This project is a Yii2-based PHP application composed of multiple entry points and shared modules.
+
+## admin / api / console / common layers
+
+The high-level layers are:
 
 - Web admin panel (admin)
 - Public API (api)
@@ -15,6 +19,8 @@ This project is a Yii2-based PHP application composed of multiple entry points a
 
 Below is a concise map of the repository with brief descriptions to help you navigate. As requested, this focuses on how the project works today; deprecated/unused parts will be identified and removed in later iterations once confirmed.
 
+## Top-level directories map
+
 Top-level directories and files
 
 - admin
@@ -22,6 +28,8 @@ Top-level directories and files
 - api
   - Public/API entry. Hosts controllers, models/forms, and configuration used to serve HTTP endpoints.
   - See API.md for the API documentation overview and endpoints index.
+## Shared synchronizations & models
+
 - common
   - Shared application code reused by admin, api, and console.
   - Notable sub-areas:
@@ -37,6 +45,8 @@ Top-level directories and files
     - models: Console-specific repositories/services (e.g., SystemStateProcessesRepository for process state tracking).
     - actions: Generic action classes plugged into controllers (e.g., SyncAction) [if present].
   - See CONSOLE_COMMANDS.md for a full list of console controllers and commands (TempController intentionally omitted).
+## Docker & environments
+
 - docker
   - Docker configuration for local development, including MySQL service and initialization via dumps in docker/mysql/dumps.
 - environments

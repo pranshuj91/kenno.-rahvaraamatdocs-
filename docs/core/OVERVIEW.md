@@ -22,20 +22,19 @@ Use the sidebar on the left, or the tables below, to open any page. Each topic l
 
 | Inside this page |
 |---|
-| Configuration |
-| Running the Queue Worker |
-| Failed Job Handling |
-| Job Classes |
-| How Jobs Are Pushed |
-| Monitoring |
-
+| [Configuration](./QUEUE_SYSTEM.md#configuration) |
+| [Running the Queue Worker](./QUEUE_SYSTEM.md#running-the-queue-worker) |
+| [Failed Job Handling](./QUEUE_SYSTEM.md#failed-job-handling) |
+| [Job Classes](./QUEUE_SYSTEM.md#job-classes) |
+| [How Jobs Are Pushed](./QUEUE_SYSTEM.md#how-jobs-are-pushed) |
+| [Monitoring](./QUEUE_SYSTEM.md#monitoring) |
 
 ### [CP-002](./NOTIFICATIONS.md) — Email & SMS Notifications
 
 | Inside this page |
 |---|
-| SMS (Messente) |
-| Email System |
-| Automated Notification System |
-| Console Commands |
-| Expiration Rules |
+| [SMS (Messente)](./NOTIFICATIONS.md#sms-messente) |
+| [Email System](./NOTIFICATIONS.md#email-system) |
+| [Automated Notification System](./NOTIFICATIONS.md#automated-notification-system) |
+| [Console Commands](./NOTIFICATIONS.md#console-commands) |
+| [Expiration Rules](./NOTIFICATIONS.md#expiration-rules) |

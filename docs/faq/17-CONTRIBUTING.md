@@ -2,6 +2,8 @@ id: CONTRIBUTING
 title: CONTRIBUTING
 # Contributing
 
+## Bug / feature / security report templates
+
 ## How to Contribute
 
 ### **Getting Started**

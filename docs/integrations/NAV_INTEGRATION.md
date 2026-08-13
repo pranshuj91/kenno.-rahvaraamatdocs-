@@ -10,10 +10,24 @@ This document describes the two-way integration between Rahva Raamat and Microso
 ## Overview
 
 The NAV integration is bidirectional:
+
 - **Sync (IN):** Pull data from NAV into the application (products, orders, availability, prices, clients, categories, etc.)
 - **Post (OUT):** Push data from the application to NAV (orders, new products, clients, authors, series)
 
 Communication uses SOAP/NTLM for outgoing posts and database-level sync (via temp tables) for incoming data.
+
+**Admin does not talk to NAV directly.** Admin reads/writes **our** database. Background jobs are the bridge: SQL pulls from `navDb` on the way in, and SOAP posts on the way out.
+
+### Approximate schedules (NAV)
+
+| Job | Approx. schedule |
+|-----|------------------|
+| Order processing (including post to NAV) | Every ~2 minutes |
+| Order sync from NAV | Every ~30 minutes |
+| Availability / stock from NAV | Every ~35 minutes, 09:00–22:00 |
+| Other NAV syncs (products, clients, prices, …) | Cron on server (Zone crontab; not in repo) |
+
+Exact production crontab lives in the Zone.ee panel.
 
 ## Architecture
 
@@ -140,11 +154,23 @@ LOGGING:
 **File:** `common/synchronizations/nav/post/NavPoster.php`
 
 Core SOAP communication handler:
+
 - NTLM authentication via SoapClient
 - XML validation against XSD schemas
 - Logs all requests/responses to `log_nav` table via `LogNav` model
 - Configurable for test vs. production WSDL
 - SOAP connection timeout: 30 seconds
+
+#### WEBImport endpoints (ops reference)
+
+When an order / customer / new product is posted, XML is sent to NAV Codeunit `WEBImport`:
+
+| Env | Endpoint |
+|-----|----------|
+| Production | `http://kontor.rahvaraamat.ee:7067/DynamicsNAV80_WS_WEB/WS/Rahva%20Raamat%20AS/Codeunit/WEBImport` |
+| Test | `http://kontor.rahvaraamat.ee:8047/TEST_DynamicsNAV80_TEST/WS/Rahva%20Raamat%20AS/Codeunit/WEBImport` |
+
+Auth: NTLM. Every outgoing call is stored in `log_nav` (request XML + response XML).
 
 ### WSDL Schema Files
 
@@ -194,11 +220,21 @@ Attached to models to automatically set `nav_sync_queued=1` when tracked attribu
 Table: `log_nav`
 
 All NAV API interactions are logged with:
+
 - Datetime
 - Request XML
 - Response XML
 - Element class (which entity type)
 - Element ID
+
+### Where to view in Admin
+
+| Page | What you see | Who can see it |
+|------|----------------|----------------|
+| Debug → **NAV logi** | Full request XML + response XML per call | Debugger role |
+| Order debug | Last NAV XML for that order | Debugger role |
+
+Empty SOAP responses in **NAV logi** usually indicate a problem. There is no separate public “API request log” site — NAV outgoing is the integration with a full request/response viewer in Admin.
 
 ## Console Commands
 

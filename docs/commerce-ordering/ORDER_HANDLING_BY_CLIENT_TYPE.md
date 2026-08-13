@@ -16,14 +16,14 @@ Contents
 - Fulfillment and notifications
 - Troubleshooting and operational notes
 
-Client type classifiers and account routing
+## Client type classifiers and account routing
 - Client types are determined via ClientAccount::getTypeManager() using classifier CLIENT_TYPE.
   - Retail: guests and logged-in retail users
   - Company: business and wholesale accounts (with discount group type and codes)
 - Pricing is selected via ProductPriceCalculationManager which picks the calculator by client type. The resulting price affects order totals, VAT basis, and discount display.
 - Checkout and post-payment processing are identical at the pipeline level (see ORDER_PURCHASE_FLOW.md), but the inputs (pricing, VAT flags, and identifiers) differ by client type.
 
-Retail (customers/guests) order handling
+## Retail (customers/guests) order handling
 - Who: Guests or logged-in retail customers.
 - Price source and tax:
   - Prices are VAT-included (shop price) with optional VAT-free flag in special cases.
@@ -42,7 +42,7 @@ Retail (customers/guests) order handling
   - Customer codes usually map to website-generated retail customer codes (W%-prefixed) where applicable.
   - Orders are posted as web orders with web store NAV code.
 
-Business clients (company) order handling
+## Business clients (company) order handling
 - Who: Company accounts using business terms but not necessarily wholesale price lists.
 - Price source and tax:
   - Base price is max(original, shop). If product’s default discount (shop vs original) is better than assigned/custom, shop price is used; otherwise the highest applicable discount is applied when regular discounts are allowed.
@@ -59,7 +59,7 @@ Business clients (company) order handling
   - Company customer codes typically start with W% (website-originated) but map to the company master in NAV.
   - Discount group type id (e.g., OMA) influences discounts and may be relevant for NAV posting/validation.
 
-Wholesale clients order handling
+## Wholesale clients order handling
 - Who: Company accounts using wholesale price lists and/or custom per-product wholesale prices.
 - Price source and tax:
   - Primary source is wholesalePrice (VAT-excluded) or a per-product custom wholesale price from WholesaleClientPriceRepository based on the company group code.
@@ -78,7 +78,7 @@ Wholesale clients order handling
 - NAV identifiers:
   - Orders are posted to NAV as website-originated company orders. Company discount group type and codes (e.g., OMA, group code strings) may control pricing/validation within NAV.
 
-NAV posting and synchronization differences
+## NAV posting and synchronization differences
 - Posting after processing: console order/process invokes common\synchronizations\nav\post\order\OrderPost to retry/ensure posting to NAV for processed orders.
 - Periodic reconciliation: common\synchronizations\nav\sync\OrderSync merges NAV’s posted and open orders into local temp tables and updates RR orders:
   - Keeps totals and line amounts in sync for all client types.
@@ -86,13 +86,13 @@ NAV posting and synchronization differences
   - Optional scoping by webStoreNavCode.
 - Expect that business/wholesale amounts may be VAT-excluded at line level depending on the configuration; NAV becomes the source of truth after posting.
 
-Fulfillment and notifications
+## Fulfillment and notifications
 - Regardless of client type, after payment authorization/capture:
   - OrderPurchaseManager::process() allocates inventory and issues entitlements.
   - EmailNotificationHandler sends confirmations. For company/wholesale, templates typically omit consumer-oriented discount visuals.
   - PostBackHandler triggers external system hooks where configured.
 
-Troubleshooting and operational notes
+## Troubleshooting and operational notes
 - If prices/discounts look wrong on a company/wholesale order:
   - Verify discount group type id and product group_discount_code.
   - Check assigned discount percent via ClientAccount->getDiscountManager()->getAssignedDiscountPercent().

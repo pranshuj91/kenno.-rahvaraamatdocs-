@@ -42,6 +42,8 @@ sidebar_label: OP-008 Feed Exporters
 
 ---
 
+## FeedExporterController commands
+
 ### Developer Docs — `docs/reference/07-CONSOLE_COMMANDS.md` — FeedExporterController
 
 #### **FeedExporterController** (`console/controllers/FeedExporterController.php`)

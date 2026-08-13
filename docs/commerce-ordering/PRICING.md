@@ -15,7 +15,7 @@ Contents
 - Assigned/Custom discounts and data sources
 - Extension points
 
-Core concepts and entities
+## Core concepts and entities
 - IEvaluatedProduct (common/prices/entities/IEvaluatedProduct.php)
   - Abstraction used by all calculators. It provides:
     - getShopPrice(): ?float — web shop price (VAT included)
@@ -42,7 +42,7 @@ Core concepts and entities
 - ProductPriceCalculationManager (common/prices/ProductPriceCalculationManager.php)
   - Entry point that selects a calculator based on the authenticated client (customer, business, wholesale, shop, simple, regular) and injects flags/parameters such as VAT-free mode and assigned discount percent.
 
-Price calculators by client type (common/prices/calculators)
+## Price calculators by client type (common/prices/calculators)
 - CustomerPriceCalculator
   - Audience: Retail customers (guests and logged-in).
   - Base price: `shopPrice` if available, otherwise `originalPrice`.
@@ -77,7 +77,7 @@ Price calculators by client type (common/prices/calculators)
   - SimplePriceCalculator: Lightweight version for guest/logged-in with optional VAT-free handling and campaign override.
   - RegularPriceCalculator: Applies highest provided discounts over `shopPrice` or `originalPrice` when regular discounts apply.
 
-Discounts and campaigns
+## Discounts and campaigns
 - Regular discount applicability
   - All discount application is gated by `IEvaluatedProduct::isPriceGroupDiscountRegular()`.
   - If false, discounts in calculators are not applied.
@@ -102,11 +102,11 @@ Discounts and campaigns
     - Retail (logged-in): classifier CLIENT_TYPE=RETAIL
     - Company/Wholesale: classifier CLIENT_TYPE=COMPANY
 
-VAT handling
+## VAT handling
 - Customer/Shop/Simple calculators compute with VAT included by default and can switch to VAT-free by dividing by `(1 + VAT)`.
 - Wholesale calculator starts from VAT-free wholesale or custom price; if showing with VAT, it multiplies by `(1 + VAT)`. When falling back to a VAT-included price (shop or campaign) and VAT-free is requested, the VAT component is subtracted.
 
-Assigned/Custom discounts and data sources
+## Assigned/Custom discounts and data sources
 - Company client custom discount (Business/Wholesale):
   - `CompanyClientCustomDiscountCache::get(discountGroupTypeId, groupDiscountCode)` returns a configured discount percent.
   - For OMA employees (CompanyDiscountGroupTypeEnum::OMA) special handling applies in wholesale custom price resolution.
@@ -132,7 +132,7 @@ Important rules and edge cases
 - For business/wholesale, CalculatedPrice’s original price is set to 0 in Wholesale (and effectively suppressed for Business via logic), so UI should not display strikethrough discounts for those client types.
 - getHighestDiscountPercent is used — discounts do not stack additively.
 
-Extension points
+## Extension points
 - Add a new calculator under `common/prices/calculators` implementing `IProductPriceCalculator`.
 - Extend `ProductPriceCalculationManager` to route new client types to the new calculator and feed required parameters.
 - Extend `IEvaluatedProduct` implementation if additional price inputs are required (e.g., regional prices), keeping VAT handling consistent.

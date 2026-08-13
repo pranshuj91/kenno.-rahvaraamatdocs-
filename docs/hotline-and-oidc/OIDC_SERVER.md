@@ -9,6 +9,8 @@ The application is responsible for providing OIDC functionality for authenticati
 The solution is done based on [the library](https://github.com/rhertogh/yii2-oauth2-server/tree/master).
 
 ## Setup
+
+## Configuration and behaviour
 Here are the steps that should be done to set up the OIDC server.
 
 - `composer install`.

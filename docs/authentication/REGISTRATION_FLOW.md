@@ -27,6 +27,8 @@ Cross-cutting behaviors
 - Many actions return validation models with 422 on invalid input; successful flows often return 200 with either an empty object or a small payload.
 - Authentication is optional for most registration-related actions; switch-web-store requires a bearer token.
 
+### Simple customer registration (mobile & web)
+
 1) Simple customer registration
 
 A) Mobile-oriented: POST /auth/register
@@ -49,6 +51,8 @@ B) Web-oriented: POST /auth/register-simple
   - validate() + submit() and error handling mirror the mobile path.
 - Outcome is identical to /auth/register regarding email logic and persistence.
 
+### Business customer registration
+
 2) Business customer registration
 
 - Endpoint: POST /auth/register-business
@@ -60,6 +64,8 @@ B) Web-oriented: POST /auth/register-simple
   - Creates a Company and associated ClientAccount for the business user in the current WebStore.
   - Triggers any internal notifications configured in the handler (e.g., to back office) — see handler implementation for details.
 
+### Wholesale customer registration
+
 3) Wholesale customer registration
 
 - Endpoint: POST /auth/register-wholesale
@@ -69,6 +75,8 @@ B) Web-oriented: POST /auth/register-simple
   - Error handling mirrors other registration actions.
 - Side-effects:
   - Creates a wholesale-oriented Company/ClientAccount request; activation/approval may include back-office steps (see form/handler).
+
+### Email verification
 
 4) Email verification: pre-flight metadata
 
@@ -90,6 +98,8 @@ B) Web-oriented: POST /auth/register-simple
   - On invalid input: returns the form with validation errors (422 semantics in REST clients).
   - On missing/invalid token or mismatched activation context: 400 Bad Request.
 
+### Password reset
+
 6) Password reset: request
 
 - Endpoint: POST /auth/reset-password
@@ -107,6 +117,8 @@ B) Web-oriented: POST /auth/register-simple
   - Loads api\models\forms\NewPasswordForm with the User; on validate(): submit() persists the new password and clears the token; returns {} (200).
   - Errors: 422 for invalid new password input; 500 if DB save fails.
 
+### Social authentication (Google / Facebook / Apple)
+
 8) Social registration and linking
 
 A) Redirect-handled entry: GET|POST /auth/external
@@ -123,6 +135,8 @@ B) Completing role-specific login: POST /auth/social-login
   - Resolves the auth client via yii\authclient\Collection (e.g., google, facebook).
   - Delegates to common\components\auth\AuthHandler->loginWithRole($auth, $role, $isNativeForm), which returns a token payload.
 - Response: \{ accessToken \} and possibly additional data depending on the handler implementation.
+
+### Login & switch web store
 
 9) Classic login (context)
 

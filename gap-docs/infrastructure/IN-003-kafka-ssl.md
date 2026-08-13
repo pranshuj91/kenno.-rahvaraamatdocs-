@@ -24,6 +24,8 @@ sidebar_label: IN-003 Kafka SSL
 
 ## Documentation
 
+## Kafka SSL / TLS configuration
+
 > This topic was added to Developer Docs and is shown here so the team can review the documented coverage for this gap in one place.
 
 ---
@@ -46,6 +48,8 @@ Uses the **PHP-RdKafka** extension (librdkafka wrapper).
 Connection Provider notes SSL configuration for secure communication.
 
 ---
+
+## apacheKafka component settings
 
 ### Developer Docs — `docs/reference/08-CONFIGURATION.md` — apacheKafka component
 

@@ -14,6 +14,8 @@ This document describes, in detail, what happens during the order checkout and f
 The sections below trace objects, methods, status transitions, and side-effects so you can correlate logs and metrics with runtime behavior.
 
 
+### API checkout (POST checkout/index)
+
 1) User checks out: api/checkoutController/index
 - Entry point: api/controllers/CheckoutController::actionIndex()
   - Validates that the basket is non-empty via getBasket(); otherwise 400 Bad Request.
@@ -24,6 +26,8 @@ The sections below trace objects, methods, status transitions, and side-effects 
     - Calls OrderCheckoutService::checkout($checkoutForm) which creates a new Order in the database (status NEW), calculates totals, persists order lines, applies delivery/payment selections, and binds the order to the current web store and client account.
     - Returns api\serializers\RedirectSerializer pointing to BankController::actionCreateForm with query params orderId and checksum.
       - The JSON looks like: \{ "location": "https://.../bank/create-form?orderId=...&checksum=..." \}
+
+### Bank payment create-form & return
 
 - Next redirect: api/controllers/BankController::actionCreateForm(int $orderId, string $checksum)
   - Resolves the Order by id and checksum; validates it is eligible for payment.
@@ -46,10 +50,14 @@ The sections below trace objects, methods, status transitions, and side-effects 
     - If this is a bank’s silent/backup ping, returns 200 OK immediately.
     - Otherwise, redirects to the final summary URL (success or failure). The summary page data is served by BankController::actionPaymentResult, which returns either OrderSuccessfulSummaryPageSerializer or OrderFailureSummaryPageSerializer for the app to render.
 
+### Order status transitions
+
 - Typical order status transitions during step 1
   - NEW → (actionCreateForm) → PENDING_PAYMENT
   - From callbacks: if authorized/captured → PENDING_PROCESSING (eligible for step 2); if failed/canceled → a failure state handled by step 2 logic as well.
 
+
+### console/order/process (post-payment)
 
 2) Cron (every 2 minutes): console/orderController/actionProcess
 - Entry point: console/controllers/OrderController::actionProcess()
@@ -78,6 +86,8 @@ The sections below trace objects, methods, status transitions, and side-effects 
 - Related utility: actionProcessPendingNonRefundableState
   - For audio products, checks refundability (api\modules\audio\purchase\AudioRefundStateChecker). If an order is not refundable, it is returned to PENDING_PROCESSING for standard handling.
 
+
+### NAV order synchronization
 
 3) Cron (every ~30 minutes): Order sync with NAV
 - Mechanism: dynamic sync action via console/controllers/SyncController and common\synchronizations\SyncHandlerFactory.

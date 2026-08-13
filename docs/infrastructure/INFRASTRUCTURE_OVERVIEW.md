@@ -22,17 +22,15 @@ Use the sidebar on the left, or the tables below, to open any page. Each topic l
 
 | Inside this page |
 |---|
-| Database Configuration |
-| Behavior |
-| Configuration Source |
-| Administration |
-| Application Usage |
-| What This Setting Controls |
-| What This Setting Does NOT Control |
-| Technical Flow |
-| Notes |
-
-
+| [Database Configuration](./IN-004-WEB-STORE-SSL-SETTINGS.md#database-configuration) |
+| [Behavior](./IN-004-WEB-STORE-SSL-SETTINGS.md#behavior) |
+| [Configuration Source](./IN-004-WEB-STORE-SSL-SETTINGS.md#configuration-source) |
+| [Administration](./IN-004-WEB-STORE-SSL-SETTINGS.md#administration) |
+| [Application Usage](./IN-004-WEB-STORE-SSL-SETTINGS.md#application-usage) |
+| [What This Setting Controls](./IN-004-WEB-STORE-SSL-SETTINGS.md#what-this-setting-controls) |
+| [What This Setting Does NOT Control](./IN-004-WEB-STORE-SSL-SETTINGS.md#what-this-setting-does-not-control) |
+| [Technical Flow](./IN-004-WEB-STORE-SSL-SETTINGS.md#technical-flow) |
+| [Notes](./IN-004-WEB-STORE-SSL-SETTINGS.md#notes) |
 ### Production
 
 | ID | Topic |
@@ -46,45 +44,40 @@ Use the sidebar on the left, or the tables below, to open any page. Each topic l
 
 | Inside this page |
 |---|
-| Hosting |
-| Paths |
-| Database (MariaDB) |
-| Redis |
-| Webserver notes |
-| Confirmed technology stack |
-
+| [Hosting](./IN-005-PRODUCTION-SERVER-ARCHITECTURE.md#hosting) |
+| [Paths](./IN-005-PRODUCTION-SERVER-ARCHITECTURE.md#paths) |
+| [Database (MariaDB)](./IN-005-PRODUCTION-SERVER-ARCHITECTURE.md#database-mariadb) |
+| [Redis](./IN-005-PRODUCTION-SERVER-ARCHITECTURE.md#redis) |
+| [Webserver notes](./IN-005-PRODUCTION-SERVER-ARCHITECTURE.md#webserver-notes) |
+| [Confirmed technology stack](./IN-005-PRODUCTION-SERVER-ARCHITECTURE.md#confirmed-technology-stack) |
 
 ### [IN-001](./IN-001-SSL-CERTIFICATE-MANAGEMENT.md) — SSL Certificate Management
 
 | Inside this page |
 |---|
-| SSL certificate |
-| Runtime related to the web host |
-| Document root |
-
+| [SSL certificate](./IN-001-SSL-CERTIFICATE-MANAGEMENT.md#ssl-certificate) |
+| [Runtime related to the web host](./IN-001-SSL-CERTIFICATE-MANAGEMENT.md#runtime-related-to-the-web-host) |
+| [Document root](./IN-001-SSL-CERTIFICATE-MANAGEMENT.md#document-root) |
 
 ### [IN-002](./IN-002-PM2-PROCESS-MANAGEMENT.md) — PM2 Process Management
 
 | Inside this page |
 |---|
-| PM2 managed processes |
-| PM2 configuration files |
-| Observations |
-
+| [PM2 managed processes](./IN-002-PM2-PROCESS-MANAGEMENT.md#pm2-managed-processes) |
+| [PM2 configuration files](./IN-002-PM2-PROCESS-MANAGEMENT.md#pm2-configuration-files) |
+| [Observations](./IN-002-PM2-PROCESS-MANAGEMENT.md#observations) |
 
 ### [IN-006](./IN-006-MONITORING-ALERTING.md) — Monitoring & Alerting
 
 | Inside this page |
 |---|
-| Server monitoring (Zone.ee) |
-| Redis monitoring |
-| Available logs |
-| Scheduled jobs |
-| Elasticsearch |
-| Health reporting |
-| Backups (Zone panel) |
-
-
+| [Server monitoring (Zone.ee)](./IN-006-MONITORING-ALERTING.md#server-monitoring-zoneee) |
+| [Redis monitoring](./IN-006-MONITORING-ALERTING.md#redis-monitoring) |
+| [Available logs](./IN-006-MONITORING-ALERTING.md#available-logs) |
+| [Scheduled jobs](./IN-006-MONITORING-ALERTING.md#scheduled-jobs) |
+| [Elasticsearch](./IN-006-MONITORING-ALERTING.md#elasticsearch) |
+| [Health reporting](./IN-006-MONITORING-ALERTING.md#health-reporting) |
+| [Backups (Zone panel)](./IN-006-MONITORING-ALERTING.md#backups-zone-panel) |
 ### Staging
 
 | ID | Topic |
@@ -98,46 +91,41 @@ Use the sidebar on the left, or the tables below, to open any page. Each topic l
 
 | Inside this page |
 |---|
-| Hosting |
-| Paths |
-| Subdomains |
-| Port forwards |
-| Database (MariaDB) |
-| Redis |
-| Access inventory (high level — no credentials) |
-| Webserver notes |
-| Confirmed technology stack |
-
+| [Hosting](./IN-005-STAGING-SERVER-ARCHITECTURE.md#hosting) |
+| [Paths](./IN-005-STAGING-SERVER-ARCHITECTURE.md#paths) |
+| [Subdomains](./IN-005-STAGING-SERVER-ARCHITECTURE.md#subdomains) |
+| [Port forwards](./IN-005-STAGING-SERVER-ARCHITECTURE.md#port-forwards) |
+| [Database (MariaDB)](./IN-005-STAGING-SERVER-ARCHITECTURE.md#database-mariadb) |
+| [Redis](./IN-005-STAGING-SERVER-ARCHITECTURE.md#redis) |
+| [Access inventory (high level — no credentials)](./IN-005-STAGING-SERVER-ARCHITECTURE.md#access-inventory-high-level--no-credentials) |
+| [Webserver notes](./IN-005-STAGING-SERVER-ARCHITECTURE.md#webserver-notes) |
+| [Confirmed technology stack](./IN-005-STAGING-SERVER-ARCHITECTURE.md#confirmed-technology-stack) |
 
 ### [IN-001](./IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md) — SSL Certificate Management (Staging)
 
 | Inside this page |
 |---|
-| SSL certificates |
-| HTTPS configuration |
-| Virtual IP |
-| Document root |
-
+| [SSL certificates](./IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md#ssl-certificates) |
+| [HTTPS configuration](./IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md#https-configuration) |
+| [Virtual IP](./IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md#virtual-ip) |
+| [Document root](./IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md#document-root) |
 
 ### [IN-002](./IN-002-PM2-PROCESS-MANAGEMENT-STAGING.md) — PM2 Process Management (Staging)
 
 | Inside this page |
 |---|
-| PM2 managed processes |
-| Observations |
-
+| [PM2 managed processes](./IN-002-PM2-PROCESS-MANAGEMENT-STAGING.md#pm2-managed-processes) |
+| [Observations](./IN-002-PM2-PROCESS-MANAGEMENT-STAGING.md#observations) |
 
 ### [IN-006](./IN-006-MONITORING-ALERTING-STAGING.md) — Monitoring & Alerting (Staging)
 
 | Inside this page |
 |---|
-| Server monitoring (Zone.ee) |
-| Quota notifications |
-| Available logs |
-| Scheduled jobs |
-| Elasticsearch |
-
-
+| [Server monitoring (Zone.ee)](./IN-006-MONITORING-ALERTING-STAGING.md#server-monitoring-zoneee) |
+| [Quota notifications](./IN-006-MONITORING-ALERTING-STAGING.md#quota-notifications) |
+| [Available logs](./IN-006-MONITORING-ALERTING-STAGING.md#available-logs) |
+| [Scheduled jobs](./IN-006-MONITORING-ALERTING-STAGING.md#scheduled-jobs) |
+| [Elasticsearch](./IN-006-MONITORING-ALERTING-STAGING.md#elasticsearch) |
 ## Recommended reading order (per environment)
 
 1. **Server Architecture (IN-005)** — where the environment runs  

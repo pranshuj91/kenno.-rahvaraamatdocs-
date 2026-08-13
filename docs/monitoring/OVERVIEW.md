@@ -27,72 +27,66 @@ Use the sidebar on the left, or the tables below, to open any page. Each topic l
 
 | Inside this page |
 |---|
-| Log File Locations and Rotation |
-| Error Reporting |
-| Monitoring Tools |
-
+| [Log File Locations and Rotation](./12-MONITORING_LOGGING.md#log-file-locations-and-rotation) |
+| [Error Reporting](./12-MONITORING_LOGGING.md#error-reporting) |
+| [Monitoring Tools](./12-MONITORING_LOGGING.md#monitoring-tools) |
 
 ### [OPS-002](./LOG_MANAGEMENT.md) — Log Management
 
 | Inside this page |
 |---|
-| Log Target Configuration |
-| Custom DB Log Target |
-| Tables |
-| Archive Command |
-| Output Format |
-| Scheduling |
-| Operational Notes |
-
+| [Log Target Configuration](./LOG_MANAGEMENT.md#log-target-configuration) |
+| [Custom DB Log Target](./LOG_MANAGEMENT.md#custom-db-log-target) |
+| [Tables](./LOG_MANAGEMENT.md#tables) |
+| [Archive Command](./LOG_MANAGEMENT.md#archive-command) |
+| [Output Format](./LOG_MANAGEMENT.md#output-format) |
+| [Scheduling](./LOG_MANAGEMENT.md#scheduling) |
+| [Operational Notes](./LOG_MANAGEMENT.md#operational-notes) |
 
 ### [OPS-003](./13-SECURITY.md) — Security
 
 | Inside this page |
 |---|
-| Secure Configuration |
-| User Data Protection |
-| Common Security Practices |
-
+| [Secure Configuration](./13-SECURITY.md#secure-configuration) |
+| [User Data Protection](./13-SECURITY.md#user-data-protection) |
+| [Common Security Practices](./13-SECURITY.md#common-security-practices) |
 
 ### [OPS-004](./14-PERFORMANCE.md) — Performance
 
 | Inside this page |
 |---|
-| Caching Strategies |
-| Database Optimization |
-| Asset Optimization |
-
+| [Caching Strategies](./14-PERFORMANCE.md#caching-strategies) |
+| [Database Optimization](./14-PERFORMANCE.md#database-optimization) |
+| [Asset Optimization](./14-PERFORMANCE.md#asset-optimization) |
 
 ### [OPS-005](./CRON_JOBS.md) — Cron Jobs
 
 | Inside this page |
 |---|
-| Concurrency Guard: AlreadyRunningFilter |
-| Critical Scheduled Tasks |
-| Notification Tasks |
-| Cleanup & Maintenance Tasks |
-| Statistics & Analytics Tasks |
-| Subscription Tasks |
-| Content Generation Tasks |
-| External Integration Syncs |
-| Parallel Execution Scripts |
-| NAV Sync Handlers (via SyncController) |
-
+| [Concurrency Guard: AlreadyRunningFilter](./CRON_JOBS.md#concurrency-guard-alreadyrunningfilter) |
+| [Critical Scheduled Tasks](./CRON_JOBS.md#critical-scheduled-tasks) |
+| [Notification Tasks](./CRON_JOBS.md#notification-tasks) |
+| [Cleanup & Maintenance Tasks](./CRON_JOBS.md#cleanup--maintenance-tasks) |
+| [Statistics & Analytics Tasks](./CRON_JOBS.md#statistics--analytics-tasks) |
+| [Subscription Tasks](./CRON_JOBS.md#subscription-tasks) |
+| [Content Generation Tasks](./CRON_JOBS.md#content-generation-tasks) |
+| [External Integration Syncs](./CRON_JOBS.md#external-integration-syncs) |
+| [Parallel Execution Scripts](./CRON_JOBS.md#parallel-execution-scripts) |
+| [NAV Sync Handlers (via SyncController)](./CRON_JOBS.md#nav-sync-handlers-via-synccontroller) |
 
 ### [OPS-006](./CLEANUP_JOBS.md) — Cleanup Jobs
 
 | Inside this page |
 |---|
-| Main Cleanup Controller |
-| Other Cleanup Commands |
-| Constants Summary |
-
+| [Main Cleanup Controller](./CLEANUP_JOBS.md#main-cleanup-controller) |
+| [Other Cleanup Commands](./CLEANUP_JOBS.md#other-cleanup-commands) |
+| [Constants Summary](./CLEANUP_JOBS.md#constants-summary) |
 
 ### [OPS-007](./STATISTICS.md) — Statistics
 
 | Inside this page |
 |---|
-| CTR (Click-Through Rate) Tracking |
-| Product Statistics |
-| General Statistics |
-| Subscription Statistics |
+| [CTR (Click-Through Rate) Tracking](./STATISTICS.md#ctr-click-through-rate-tracking) |
+| [Product Statistics](./STATISTICS.md#product-statistics) |
+| [General Statistics](./STATISTICS.md#general-statistics) |
+| [Subscription Statistics](./STATISTICS.md#subscription-statistics) |

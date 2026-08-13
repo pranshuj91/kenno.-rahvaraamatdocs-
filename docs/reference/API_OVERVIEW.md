@@ -7,28 +7,28 @@ sidebar_label: API Overview
 
 This document provides a practical overview of the HTTP API exposed by the api application. It explains common conventions (authentication, headers, localization, pagination, and CORS) and gives a discoverable index of the main endpoint groups (controllers).
 
-Base URL
+## Base URL
 - Depends on your environment and web server config. In the default Docker setup from README.md, the app runs under http://localhost:8080/.
 - The API entry is the api app. If your web server maps it to a distinct base path, it is commonly available at one of:
   - http://localhost:8080/ (API as the default site)
   - http://localhost:8080/api
 
-Authentication
+## Authentication
 - Scheme: Bearer token in the Authorization header.
 - Header: Authorization: Bearer `<token>`
 - Getting a token: Use Auth endpoints. Example: POST /auth/login with credentials returns a token in the response if successful.
 - Some Auth endpoints are available without a token (optional), while others (e.g., switch-web-store) require a valid bearer token. See Auth endpoints below.
 
-CORS and cross-origin
+## CORS and cross-origin
 - The API sends CORS headers based on Yii params (params['corsOrigin']).
 - Allowed methods: GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS.
 - Options requests are allowed without authentication.
 
-Localization
+## Localization
 - Pass the language you want to receive via request header x-app-language.
 - Fallback is the default language configured in the app.
 
-Standard response headers
+## Standard response headers
 - action-time: UNIX timestamp (GMT) of the controller action start.
 - X-Pagination-* headers may be present on list endpoints:
   - X-Pagination-Current-Page
@@ -37,7 +37,7 @@ Standard response headers
   - X-Pagination-Total-Count
 - is_active and available_languages: reflect current web-store state (when applicable). If the store is locked (maintenance), the API may respond with status 423 (Locked) and not process the request.
 
-Caching controls
+## Caching controls
 - Some endpoints may control client-side caching; controllers can explicitly set no-cache headers when needed.
 
 Error handling
@@ -58,6 +58,8 @@ See REGISTRATION_FLOW.md for detailed registration and social auth flows.
 - GET  /auth/verify-email-meta — fetch metadata about email verification token.
 - GET|POST /auth/external — social login/registration redirect handler (Google/Facebook/Apple). Supports linking a social account when Authorization bearer is supplied.
 - POST /auth/switch-web-store — switch current web store (requires bearer token).
+
+## Main endpoint groups index
 
 Other common endpoint groups
 Note: Below is a discoverable index of major API groups by controller name. Each controller defines its own actions and allowed HTTP verbs. For exhaustive details, open the controller file and check verbs() and PHPDoc/OpenAPI annotations where present.

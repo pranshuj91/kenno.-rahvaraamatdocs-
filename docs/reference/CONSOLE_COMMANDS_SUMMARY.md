@@ -5,17 +5,22 @@ sidebar_label: Console Commands Summary
 ---
 ### Console controllers and commands
 
+## How to invoke commands
+
 This document lists the available console controllers and their actions. Invoke any command via:
 
 - php yii `<controller-id>`/`<action-id>` [--option=value ...]
 
 Notes
 - temp controller are intentionally omitted as requested
+## AlreadyRunningFilter notes
+
 - Some controllers use the AlreadyRunningFilter to avoid concurrent execution.
+## SyncController dynamic actions
+
 - For dynamic sync actions, see SyncController section below.
 
-Controllers overview
-
+## Controllers overview (anvol, archive, cleanup, …)
 - anvol (INTEGRATION)
   - import-products
   - import-category-map
