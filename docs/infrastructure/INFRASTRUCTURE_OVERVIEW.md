@@ -4,35 +4,139 @@ title: Infrastructure Overview
 sidebar_label: Overview
 ---
 
-# Infrastructure Overview
+# Infrastructure & Production
 
 This section documents **confirmed findings** for Rahva Raamat infrastructure. Pages use investigation IDs (`IN-xxx`) and are split by **Production** and **Staging** so Ops and developers can find the same topic quickly.
 
-## Application-level SSL
+Use the sidebar on the left, or the tables below, to open any page. Each topic lists what is covered inside so you can scan from this overview.
 
-| ID | Topic | Page |
-|---|---|---|
-| IN-004 | Web Store SSL Settings (`ssl_enabled`) | [IN-004 Web Store SSL](./IN-004-WEB-STORE-SSL-SETTINGS.md) |
+## In this section
 
-Controls whether the app generates `http://` or `https://` storefront URLs. It does **not** manage server certificates (see IN-001 for that).
+### Application-level SSL
 
-## Production
+| ID | Topic |
+|---|---|
+| [IN-004](./IN-004-WEB-STORE-SSL-SETTINGS.md) | Web Store SSL Settings |
 
-| ID | Topic | Page |
-|---|---|---|
-| IN-005 | Production Server Architecture | [IN-005 Server Architecture](./IN-005-PRODUCTION-SERVER-ARCHITECTURE.md) |
-| IN-001 | SSL Certificate Management | [IN-001 SSL Certificates](./IN-001-SSL-CERTIFICATE-MANAGEMENT.md) |
-| IN-002 | PM2 Process Management | [IN-002 PM2 Processes](./IN-002-PM2-PROCESS-MANAGEMENT.md) |
-| IN-006 | Monitoring & Alerting | [IN-006 Monitoring & Alerting](./IN-006-MONITORING-ALERTING.md) |
+### [IN-004](./IN-004-WEB-STORE-SSL-SETTINGS.md) — Web Store SSL Settings
 
-## Staging
+| Inside this page |
+|---|
+| Database Configuration |
+| Behavior |
+| Configuration Source |
+| Administration |
+| Application Usage |
+| What This Setting Controls |
+| What This Setting Does NOT Control |
+| Technical Flow |
+| Notes |
 
-| ID | Topic | Page |
-|---|---|---|
-| IN-005 | Staging Server Architecture | [IN-005 Server Architecture (Staging)](./IN-005-STAGING-SERVER-ARCHITECTURE.md) |
-| IN-001 | SSL Certificate Management | [IN-001 SSL (Staging)](./IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md) |
-| IN-002 | PM2 Process Management | [IN-002 PM2 (Staging)](./IN-002-PM2-PROCESS-MANAGEMENT-STAGING.md) |
-| IN-006 | Monitoring & Alerting | [IN-006 Monitoring (Staging)](./IN-006-MONITORING-ALERTING-STAGING.md) |
+
+### Production
+
+| ID | Topic |
+|---|---|
+| [IN-005](./IN-005-PRODUCTION-SERVER-ARCHITECTURE.md) | Production Server Architecture |
+| [IN-001](./IN-001-SSL-CERTIFICATE-MANAGEMENT.md) | SSL Certificate Management |
+| [IN-002](./IN-002-PM2-PROCESS-MANAGEMENT.md) | PM2 Process Management |
+| [IN-006](./IN-006-MONITORING-ALERTING.md) | Monitoring & Alerting |
+
+### [IN-005](./IN-005-PRODUCTION-SERVER-ARCHITECTURE.md) — Production Server Architecture
+
+| Inside this page |
+|---|
+| Hosting |
+| Paths |
+| Database (MariaDB) |
+| Redis |
+| Webserver notes |
+| Confirmed technology stack |
+
+
+### [IN-001](./IN-001-SSL-CERTIFICATE-MANAGEMENT.md) — SSL Certificate Management
+
+| Inside this page |
+|---|
+| SSL certificate |
+| Runtime related to the web host |
+| Document root |
+
+
+### [IN-002](./IN-002-PM2-PROCESS-MANAGEMENT.md) — PM2 Process Management
+
+| Inside this page |
+|---|
+| PM2 managed processes |
+| PM2 configuration files |
+| Observations |
+
+
+### [IN-006](./IN-006-MONITORING-ALERTING.md) — Monitoring & Alerting
+
+| Inside this page |
+|---|
+| Server monitoring (Zone.ee) |
+| Redis monitoring |
+| Available logs |
+| Scheduled jobs |
+| Elasticsearch |
+| Health reporting |
+| Backups (Zone panel) |
+
+
+### Staging
+
+| ID | Topic |
+|---|---|
+| [IN-005](./IN-005-STAGING-SERVER-ARCHITECTURE.md) | Staging Server Architecture |
+| [IN-001](./IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md) | SSL Certificate Management (Staging) |
+| [IN-002](./IN-002-PM2-PROCESS-MANAGEMENT-STAGING.md) | PM2 Process Management (Staging) |
+| [IN-006](./IN-006-MONITORING-ALERTING-STAGING.md) | Monitoring & Alerting (Staging) |
+
+### [IN-005](./IN-005-STAGING-SERVER-ARCHITECTURE.md) — Staging Server Architecture
+
+| Inside this page |
+|---|
+| Hosting |
+| Paths |
+| Subdomains |
+| Port forwards |
+| Database (MariaDB) |
+| Redis |
+| Access inventory (high level — no credentials) |
+| Webserver notes |
+| Confirmed technology stack |
+
+
+### [IN-001](./IN-001-SSL-CERTIFICATE-MANAGEMENT-STAGING.md) — SSL Certificate Management (Staging)
+
+| Inside this page |
+|---|
+| SSL certificates |
+| HTTPS configuration |
+| Virtual IP |
+| Document root |
+
+
+### [IN-002](./IN-002-PM2-PROCESS-MANAGEMENT-STAGING.md) — PM2 Process Management (Staging)
+
+| Inside this page |
+|---|
+| PM2 managed processes |
+| Observations |
+
+
+### [IN-006](./IN-006-MONITORING-ALERTING-STAGING.md) — Monitoring & Alerting (Staging)
+
+| Inside this page |
+|---|
+| Server monitoring (Zone.ee) |
+| Quota notifications |
+| Available logs |
+| Scheduled jobs |
+| Elasticsearch |
+
 
 ## Recommended reading order (per environment)
 
