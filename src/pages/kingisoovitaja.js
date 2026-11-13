@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import CustomLayout from '@site/src/components/CustomLayout';
 import Heading from '@theme/Heading';
+import {HtmlClassNameProvider} from '@docusaurus/theme-common';
 import homeStyles from './index.module.css';
 import featureStyles from '@site/src/components/HomepageFeatures/styles.module.css';
 
@@ -97,11 +98,13 @@ function KingisoovitajaFeatures() {
 
 export default function Kingisoovitaja() {
   return (
+    <HtmlClassNameProvider className="plugin-id-kingisoovitaja kingi-landing">
     <CustomLayout title="Kingisoovitaja" description={TAGLINE}>
       <KingisoovitajaHeader />
       <main>
         <KingisoovitajaFeatures />
       </main>
     </CustomLayout>
+    </HtmlClassNameProvider>
   );
 }

@@ -587,3 +587,67 @@ button[title='Collapse sidebar'] {
 [class*='plugin-id-kingisoovitaja'] .pagination-nav__link:hover {
   border-color: var(--kg-brand);
 }
+
+/* --------------------
+   Kingisoovitaja landing page (/kingisoovitaja): same theme as the docs section
+---------------------- */
+html.kingi-landing .hero {
+  background-color: var(--kg-blue-soft) !important;
+}
+
+html.kingi-landing .hero .hero__title {
+  color: var(--kg-brand);
+  font-family: 'Literata', Georgia, serif;
+  font-weight: 700;
+}
+
+html.kingi-landing .hero .hero__subtitle {
+  color: var(--kg-ink-muted);
+  font-family: 'Literata', Georgia, serif;
+}
+
+html.kingi-landing .button.button--secondary.button--lg {
+  background-color: #ffffff;
+  color: var(--kg-brand);
+  border: 1px solid var(--kg-brand);
+  border-radius: 999px;
+  font-family: 'Literata', Georgia, serif;
+}
+
+html.kingi-landing .button.button--secondary.button--lg:first-child {
+  background-color: var(--kg-brand);
+  color: #ffffff;
+}
+
+html.kingi-landing .button.button--secondary.button--lg:hover {
+  background-color: var(--kg-brand-deep);
+  color: #ffffff;
+  border-color: var(--kg-brand-deep);
+}
+
+html.kingi-landing main .row > .col {
+  background-color: transparent;
+  border: 0;
+  padding: 0 1rem;
+}
+
+html.kingi-landing [class*='featureCard'] {
+  background-color: #ffffff;
+  border: 1px solid var(--kg-border);
+  border-radius: 16px;
+}
+
+html.kingi-landing [class*='featureCard'] h3 {
+  color: var(--kg-brand);
+  font-family: 'Literata', Georgia, serif;
+}
+
+html.kingi-landing [class*='featureCard'] p {
+  color: var(--kg-ink);
+}
+
+html.kingi-landing [class*='featureCard'] a {
+  color: var(--kg-brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
