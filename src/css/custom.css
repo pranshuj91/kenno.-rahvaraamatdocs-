@@ -373,3 +373,217 @@ button[title='Collapse sidebar'] {
 .theme-doc-breadcrumbs {
   margin-bottom: 1.25rem;
 }
+
+/* --------------------
+   Kingisoovitaja section
+   Matches the kingisoovitaja.ee website theme (frontend/src/styles/tokens/colors.css):
+   mint page, white cards, dark-blue headings and footer, purple-ink body text, Literata serif.
+   The active navbar button stays #339995.
+---------------------- */
+[class*='plugin-id-kingisoovitaja'] {
+  --kg-brand: #224a6d;
+  --kg-brand-deep: #1a3a56;
+  --kg-surface: #e3f1f1;
+  --kg-surface-inset: #d6e9e9;
+  --kg-border: #d9e8e8;
+  --kg-blue-soft: #dbe8f4;
+  --kg-ink: #231e33;
+  --kg-ink-muted: #5b5870;
+  --kg-accent: #8db7dc;
+
+  --ifm-color-primary: var(--kg-brand);
+  --ifm-color-primary-dark: var(--kg-brand-deep);
+  --ifm-color-primary-darker: var(--kg-brand-deep);
+  --ifm-color-primary-darkest: var(--kg-brand-deep);
+  --ifm-color-primary-light: #2e5f8b;
+  --ifm-color-primary-lighter: #356a99;
+  --ifm-color-primary-lightest: var(--kg-accent);
+  --ifm-link-color: var(--kg-brand);
+  --ifm-heading-color: var(--kg-brand);
+  --ifm-font-color-base: var(--kg-ink);
+  --ifm-font-family-base: 'Literata', Georgia, serif;
+  --ifm-heading-font-family: 'Literata', Georgia, serif;
+  --ifm-hr-border-color: var(--kg-border);
+  --ifm-table-border-color: var(--kg-border);
+  --ifm-toc-border-color: var(--kg-border);
+  --ifm-global-radius: 12px;
+}
+
+[class*='plugin-id-kingisoovitaja'] body,
+[class*='plugin-id-kingisoovitaja'] .navbar,
+[class*='plugin-id-kingisoovitaja'] .menu,
+[class*='plugin-id-kingisoovitaja'] .table-of-contents {
+  font-family: 'Literata', Georgia, serif;
+}
+
+/* Navbar button: turns #339995 when active */
+.navbar__link.navbar-kingisoovitaja {
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+}
+
+.navbar__link.navbar-kingisoovitaja.navbar__link--active {
+  background-color: #339995;
+  color: #ffffff;
+}
+
+/* Page surfaces */
+[class*='plugin-id-kingisoovitaja'] .main-wrapper,
+[class*='plugin-id-kingisoovitaja'] main {
+  background-color: var(--kg-surface) !important;
+}
+
+[class*='plugin-id-kingisoovitaja'] .navbar {
+  background-color: var(--kg-surface) !important;
+  border-bottom: 1px solid var(--kg-border);
+}
+
+[class*='plugin-id-kingisoovitaja'] .navbar__link {
+  color: var(--kg-brand);
+  font-weight: 600;
+}
+
+[class*='plugin-id-kingisoovitaja'] .footer--custom {
+  background-color: var(--kg-brand) !important;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+[class*='plugin-id-kingisoovitaja'] .footer--custom .footer__copyright,
+[class*='plugin-id-kingisoovitaja'] .footer--custom .footer__company-info {
+  color: #dbe8f4;
+}
+
+/* Sidebar */
+[class*='plugin-id-kingisoovitaja'] .theme-doc-sidebar-container {
+  background-color: #ffffff;
+  border-right: 1px solid var(--kg-border) !important;
+}
+
+[class*='plugin-id-kingisoovitaja'] .menu__list-item-collapsible > .menu__link {
+  color: var(--kg-brand);
+}
+
+[class*='plugin-id-kingisoovitaja'] .menu__link--active:not(.menu__link--sublist) {
+  background-color: var(--kg-surface);
+  color: var(--kg-brand);
+}
+
+[class*='plugin-id-kingisoovitaja'] .menu__link:hover,
+[class*='plugin-id-kingisoovitaja'] .menu__caret:hover {
+  background-color: var(--kg-surface);
+}
+
+/* Content cards */
+[class*='plugin-id-kingisoovitaja'] main .container {
+  background-color: transparent;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+[class*='plugin-id-kingisoovitaja'] main .row > .col {
+  background-color: #ffffff;
+  border: 1px solid var(--kg-border);
+  border-radius: 16px;
+  padding: 1.25rem 1.75rem 2rem;
+}
+
+[class*='plugin-id-kingisoovitaja'] main .row > .col.col--3 {
+  margin-left: 1rem;
+  max-width: calc(25% - 1rem);
+  padding: 1rem;
+  align-self: flex-start;
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+/* Typography */
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown h1,
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown h2,
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown h3,
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown h4 {
+  color: var(--kg-brand);
+  font-family: 'Literata', Georgia, serif;
+  font-weight: 700;
+}
+
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown h1 {
+  font-size: 2.4rem;
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 1.5rem;
+  background-color: var(--kg-blue-soft);
+  border-radius: 12px;
+}
+
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown h2 {
+  border-bottom: 1px solid var(--kg-border);
+}
+
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown p,
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown li {
+  color: var(--kg-ink);
+}
+
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown a {
+  color: var(--kg-brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown a:hover {
+  color: var(--kg-brand-deep);
+}
+
+/* Tables */
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--kg-border);
+}
+
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown table th {
+  background-color: var(--kg-blue-soft);
+  color: var(--kg-brand);
+}
+
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown table tr:nth-child(2n) {
+  background-color: #f6fafa;
+}
+
+/* Code */
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown code {
+  background-color: var(--kg-surface);
+  color: var(--kg-brand-deep);
+  border: 1px solid var(--kg-border);
+}
+
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown pre,
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown pre code {
+  background-color: #f3f9f9 !important;
+  border: 1px solid var(--kg-border);
+}
+
+[class*='plugin-id-kingisoovitaja'] .theme-doc-markdown pre code {
+  border: 0;
+}
+
+/* Breadcrumbs, TOC, pagination */
+[class*='plugin-id-kingisoovitaja'] .breadcrumbs__link {
+  background-color: var(--kg-surface);
+  color: var(--kg-brand);
+}
+
+[class*='plugin-id-kingisoovitaja'] .table-of-contents__link--active {
+  color: var(--kg-brand);
+  font-weight: 700;
+}
+
+[class*='plugin-id-kingisoovitaja'] .pagination-nav__link {
+  border: 1px solid var(--kg-border);
+  border-radius: 12px;
+}
+
+[class*='plugin-id-kingisoovitaja'] .pagination-nav__link:hover {
+  border-color: var(--kg-brand);
+}

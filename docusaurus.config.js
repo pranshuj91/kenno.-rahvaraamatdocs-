@@ -41,6 +41,10 @@ const config = {
     locales: ['en'],
   },
 
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap',
+  ],
+
   presets: [
     [
       'classic',
@@ -70,6 +74,16 @@ const config = {
         path: 'gap-docs',
         routeBasePath: 'gaps',
         sidebarPath: './sidebarsGaps.js',
+        editUrl: undefined,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'kingisoovitaja',
+        path: 'kingisoovitaja-docs',
+        routeBasePath: 'kingisoovitaja/docs',
+        sidebarPath: './sidebarsKingisoovitaja.js',
         editUrl: undefined,
       },
     ],
@@ -132,6 +146,13 @@ const config = {
             docsPluginId: 'gaps',
             position: 'left',
             label: 'Gap Documents',
+          },
+          {
+            to: '/kingisoovitaja',
+            activeBaseRegex: '/kingisoovitaja',
+            position: 'left',
+            label: 'Kingisoovitaja',
+            className: 'navbar-kingisoovitaja',
           },
           {
             to: '/about',

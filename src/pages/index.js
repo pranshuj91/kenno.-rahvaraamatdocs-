@@ -28,6 +28,11 @@ function HomepageHeader() {
             to="/gaps/intro">
             Gap Documents
           </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/kingisoovitaja">
+            Kingisoovitaja
+          </Link>
         </div>
       </div>
     </header>
