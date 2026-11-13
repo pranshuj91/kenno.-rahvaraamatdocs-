@@ -7,19 +7,13 @@ sidebar_label: Docker Setup
 
 To install the project locally follow the instructions below:
 
-## Install Docker Desktop
-
 1. Install Docker Desktop.
-
-## MySQL dump into docker/mysql/dumps
 
 2. Download MySQL dump file.
 
 3. Move the dump file to the folder `[project root]/docker/mysql/dumps/`.
 
 4. Rename the dump file to `dump.sql`.
-
-## docker compose build / up
 
 5. Run `docker compose build`. (from the docker directory)
 
@@ -34,8 +28,6 @@ To install the project locally follow the instructions below:
 13:01:26+00:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
 ```
 
-## composer install & migrate
-
 8. Access application container console and run next commands:
 ```text
 composer install
@@ -44,8 +36,6 @@ php yii migrate
 ```
 NOTE: some error might appear during migration execution. It will depends on the dump that is used.
 The issues can be solved just by commenting problem parts of the migrations.
-
-## Access admin panel
 
 9. Access application using http://localhost:8080/admin-panel
 

@@ -19,16 +19,7 @@ const sidebars = {
       type: 'category',
       label: '1. Getting Started',
       collapsed: false,
-      link: {
-        type: 'doc',
-        id: 'setup-guide/OVERVIEW',
-      },
       items: [
-        {
-          type: 'doc',
-          id: 'setup-guide/OVERVIEW',
-          label: 'Overview',
-        },
         {
           type: 'doc',
           id: 'setup-guide/ONBOARDING',
@@ -86,16 +77,7 @@ const sidebars = {
     {
       type: 'category',
       label: '2. Authentication',
-      link: {
-        type: 'doc',
-        id: 'authentication/OVERVIEW',
-      },
       items: [
-        {
-          type: 'doc',
-          id: 'authentication/OVERVIEW',
-          label: 'Overview',
-        },
         {
           type: 'doc',
           id: 'authentication/AUTHENTICATION_AUTHORIZATION',
@@ -118,16 +100,7 @@ const sidebars = {
     {
       type: 'category',
       label: '3. Commerce & Ordering',
-      link: {
-        type: 'doc',
-        id: 'commerce-ordering/OVERVIEW',
-      },
       items: [
-        {
-          type: 'doc',
-          id: 'commerce-ordering/OVERVIEW',
-          label: 'Overview',
-        },
         {
           type: 'category',
           label: 'Orders & Checkout',
@@ -223,16 +196,7 @@ const sidebars = {
     {
       type: 'category',
       label: '4. Core Platform',
-      link: {
-        type: 'doc',
-        id: 'core/OVERVIEW',
-      },
       items: [
-        {
-          type: 'doc',
-          id: 'core/OVERVIEW',
-          label: 'Overview',
-        },
         {
           type: 'doc',
           id: 'core/QUEUE_SYSTEM',
@@ -250,16 +214,7 @@ const sidebars = {
     {
       type: 'category',
       label: '5. Integrations',
-      link: {
-        type: 'doc',
-        id: 'integrations/OVERVIEW',
-      },
       items: [
-        {
-          type: 'doc',
-          id: 'integrations/OVERVIEW',
-          label: 'Overview',
-        },
         {
           type: 'doc',
           id: 'integrations/EXTERNAL_INTEGRATIONS',
@@ -302,16 +257,7 @@ const sidebars = {
     {
       type: 'category',
       label: '6. Admin & API',
-      link: {
-        type: 'doc',
-        id: 'reference/OVERVIEW',
-      },
       items: [
-        {
-          type: 'doc',
-          id: 'reference/OVERVIEW',
-          label: 'Overview',
-        },
         {
           type: 'doc',
           id: 'reference/ADMIN_PANEL',
@@ -360,10 +306,6 @@ const sidebars = {
       type: 'category',
       label: '7. Infrastructure & Production',
       collapsed: false,
-      link: {
-        type: 'doc',
-        id: 'infrastructure/INFRASTRUCTURE_OVERVIEW',
-      },
       items: [
         {
           type: 'doc',
@@ -434,16 +376,7 @@ const sidebars = {
     {
       type: 'category',
       label: '8. Deployment & Testing',
-      link: {
-        type: 'doc',
-        id: 'deployment/OVERVIEW',
-      },
       items: [
-        {
-          type: 'doc',
-          id: 'deployment/OVERVIEW',
-          label: 'Overview',
-        },
         {
           type: 'doc',
           id: 'deployment/DEPLOYMENT_GUIDE',
@@ -471,16 +404,7 @@ const sidebars = {
     {
       type: 'category',
       label: '9. Monitoring & Operations',
-      link: {
-        type: 'doc',
-        id: 'monitoring/OVERVIEW',
-      },
       items: [
-        {
-          type: 'doc',
-          id: 'monitoring/OVERVIEW',
-          label: 'Overview',
-        },
         {
           type: 'doc',
           id: 'monitoring/MONITORING_LOGGING',
@@ -523,16 +447,7 @@ const sidebars = {
     {
       type: 'category',
       label: '10. Hotline & OIDC',
-      link: {
-        type: 'doc',
-        id: 'hotline-and-oidc/OVERVIEW',
-      },
       items: [
-        {
-          type: 'doc',
-          id: 'hotline-and-oidc/OVERVIEW',
-          label: 'Overview',
-        },
         {
           type: 'doc',
           id: 'hotline-and-oidc/Hotline-OIDC-Documentation',
@@ -550,16 +465,7 @@ const sidebars = {
     {
       type: 'category',
       label: '11. FAQ & Help',
-      link: {
-        type: 'doc',
-        id: 'faq/OVERVIEW',
-      },
       items: [
-        {
-          type: 'doc',
-          id: 'faq/OVERVIEW',
-          label: 'Overview',
-        },
         {
           type: 'doc',
           id: 'faq/FAQ_TROUBLESHOOTING',
