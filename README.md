@@ -5,6 +5,7 @@ Comprehensive developer documentation for **Rahva Raamat**, Estonia's largest bo
 
 ## Docs architecture
 
+
 This site is a **Docusaurus** app. Markdown lives under `docs/`, and the left sidebar is driven by [`sidebars.js`](./sidebars.js). Categories are ordered for first-time developers: setup first, then domain topics.
 
 
