@@ -43,19 +43,79 @@ What production changes:
 - Container logs are rotated (10 MB x 5 files per service). Every container has a Docker healthcheck.
 - Docker-published ports bypass UFW, so never publish the database on `0.0.0.0`.
 
+## Server access
+
+Log in over SSH with a key file, as the user `notroot`, and work in the project folder `/srv/rr`:
+
+```bash
+ssh -i PATH_TO_YOUR_KEY notroot@SERVER_IP
+cd /srv/rr
+```
+
+:::note
+The server IP is left out of this page on purpose (the docs site is published). Ask the team for the address and for your key. Never put private keys or `.env` values in the docs.
+:::
+
 ## Deploy procedure
 
-**Normal deploy:** `bin/deploy.sh SHA` on the server, or the GitHub "Deploy" workflow once its secrets are set. Steps:
+### Normal deploy (recommended)
 
-1. Lock; require a clean `main` checkout.
-2. `git fetch` and fast-forward to the commit (it must be on `origin/main`).
-3. Build the php image and run `composer install --no-dev`.
-4. `bin/prod_compose.sh up` (including the frontend).
-5. `bin/prod_compose.sh migrate`.
-6. Restart Caddy or cron if their config changed.
-7. Wait up to 150 s for `https://SITE_ADDRESS/health`.
+1. Merge the code into the `main` branch.
+2. **Staging** deploys automatically: every push to `main` goes to staging once CI passes.
+3. Test on staging: `https://staging.kingisoovitaja.ee`.
+4. **Production** is deployed by hand: GitHub, Actions, Deploy, Run workflow, choose `production` (from `main`).
+5. Check the result: the workflow waits for `/health` and fails if the site does not come up.
 
-`.env` changes are manual. **Rollback** = revert on `main` and deploy again. Avoid deploying between 01:00 and 03:30.
+What the deploy does on the server (you do not run these yourself):
+
+1. Pulls the commit. It stops if the server has local changes or the commit is not on `main`.
+2. Runs `composer install --no-dev`.
+3. Rebuilds and restarts the containers, including the frontend website, with `bin/prod_compose.sh up`.
+4. Runs the database migrations (`migrate`).
+5. Restarts Caddy or cron if their config changed.
+6. Waits up to 150 seconds for `/health`.
+
+:::caution[Check against the current state]
+The automatic staging deploy needs the GitHub `DEPLOY_*` secrets and a staging server. The earlier project documentation (Nov 2026) recorded both as not set up yet, with a manual first deploy on `/srv/rr`. Confirm with the team whether they are in place now.
+:::
+
+### Manual deploy (only if GitHub Actions is not working)
+
+On the server, in the project folder (`/srv/rr`):
+
+```bash
+bin/deploy.sh COMMIT_SHA
+```
+
+### Rules
+
+- Do not deploy between 01:00 and 03:30. The nightly sync runs then, and a deploy stops it.
+- Changes to `.env` (keys, URLs) are not deployed. Edit `.env` on the server by hand, then run `bin/prod_compose.sh up`.
+- To roll back, revert the commit on `main` and deploy again.
+
+### Extra steps, only when needed
+
+If the change affects product data or search fields, rebuild the search index:
+
+```bash
+docker exec kingisoovitaja_cron php /var/www/bin/sync_to_meili.php
+```
+
+To re-import the product feed now instead of waiting for the night:
+
+```bash
+docker exec kingisoovitaja_cron php /var/www/src/sync.php
+```
+
+To look at logs:
+
+```bash
+bin/prod_compose.sh logs php
+```
+
+### Quick check after a bigger change
+
+From the frontend container, call the API without a key (should return 401) and with a key (should return 200). Then open the website and run one chat and one test order on staging.
 
 On the first deploy also run `bin/prod_compose.sh meili-key`, put the printed `MEILI_API_KEY` in `.env` and run `bin/prod_compose.sh up php`.
 
@@ -73,7 +133,7 @@ docker exec kingisoovitaja_cron php /var/www/bin/sync_to_meili.php
 
 Tip: type commands with plain quotes, or none. Curly quotes copied from chat break `-v` and URLs.
 
-**Smoke test after a bigger change:** a `curl` to the API without a key (expect 401) and one with a key (expect 200), both from the frontend container. From anywhere else the public `/endpoint.php` answers 403.
+From anywhere other than the frontend container the public `/endpoint.php` answers 403.
 
 ## Website deploy
 
