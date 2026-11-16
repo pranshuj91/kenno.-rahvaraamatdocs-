@@ -8,12 +8,21 @@ sidebar_label: Development Setup
 
 ## Prerequisites
 
+With Docker (the documented path):
+
 - Docker with Compose.
 - A Gemini API key and an OpenAI API key.
 - Composer (or use `docker compose run --rm php composer install`).
-- For the website only: Node.js `>=20.11.0` (from `frontend/package.json`).
 
-## Backend: run locally
+Without Docker (see [Backend: run without Docker](#backend-run-without-docker)):
+
+- PHP `~8.5.0` with the extensions `curl`, `mbstring`, `pdo_mysql` (from `composer.json`), and Composer 2.
+- MariaDB 10.11 and Meilisearch v1.54.3 installed and running on your machine.
+- A Gemini API key and an OpenAI API key (needed for chat and enrichment).
+
+For the website only: Node.js `>=20.11.0` (from `frontend/package.json`).
+
+## Backend: run with Docker
 
 ```bash
 cp .env.example .env              # fill in GEMINI_API_KEY, OPENAI_API_KEY, ADMIN_PASSWORD
@@ -40,20 +49,77 @@ docker compose exec cron php bin/sync_to_meili.php     # DB -> Meilisearch (stag
 - Only one `sync.php` runs at a time: a second run exits with code 75, from cron or from a manual `exec`.
 - Removing more than 10% of the catalogue as stale is refused unless you pass `--allow-mass-delete`.
 
+## Backend: run without Docker
+
+The repository README only documents the Docker stack. The steps below are put together from the code and config files (`composer.json`, `src/App/Database.php`, `src/App/MeiliClientFactory.php`, `src/App/Paths.php`, `docker-compose.yml`, `docker/php.Dockerfile`). Treat them as a checklist to verify, not as a tested procedure.
+
+What the code shows:
+
+- `Paths::root()` is documented as "the checkout on the host, `/var/www` in the containers", so the CLI scripts are written to run from a normal checkout.
+- `Database` reads `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASS` with `getenv`. Outside Docker the host defaults to `127.0.0.1`, and the port defaults to **13306** (the port the Docker compose publishes). A MariaDB installed normally listens on 3306, so set `DB_PORT=3306`.
+- Defaults for name, user and password are `kingisoovitaja`, `kingo_user`, `kingo_pass` (the local values in `.env.example`).
+- `MeiliClientFactory` reads `MEILI_HOST` (a host name on port 7700, or a full URL) and `MEILI_API_KEY`, falling back to `MEILI_MASTER_KEY`. It throws if neither is set. If `MEILI_HOST` is unset it uses the compose service name, so set it yourself.
+- No `.env` loader was found in `src/`, `bin/` or `rc2-controller/api.php`: the variables must be in the process environment (exported in your shell). Docker Compose is what normally injects `.env`.
+
+Steps:
+
+1. **MariaDB 10.11:** create the database and user (names as above, or your own) and give the user full rights on that database.
+2. **Meilisearch v1.54.3** with the same settings the compose file uses:
+
+```bash
+MEILI_MASTER_KEY=your_local_master_key MEILI_ENV=development MEILI_NO_ANALYTICS=true MEILI_EXPERIMENTAL_ENABLE_VECTOR_STORE=true meilisearch
+```
+
+   It listens on port 7700. The vector store flag is needed for the hybrid (vector) search.
+3. **PHP:** use PHP 8.5 with `curl`, `mbstring`, `pdo_mysql`. The Docker image also sets `memory_limit = 256M` and `date.timezone = Europe/Tallinn`.
+4. **Environment** (bash example; use your own values, never commit them):
+
+```bash
+export DB_HOST=127.0.0.1 DB_PORT=3306 DB_NAME=kingisoovitaja DB_USER=kingo_user DB_PASS=your_db_password
+export MEILI_HOST=http://127.0.0.1:7700 MEILI_MASTER_KEY=your_local_master_key
+export GEMINI_API_KEY=your_gemini_key OPENAI_API_KEY=your_openai_key
+export RC2_API_KEYS=$(openssl rand -hex 32)
+```
+
+5. **Install and load data** from the repository root:
+
+```bash
+composer install
+php bin/migrate.php          # apply migrations (tracked in schema_migrations)
+php src/sync.php             # download feed -> DB -> index
+php bin/sync_to_meili.php    # DB -> Meilisearch (needs the master key)
+```
+
+   On an empty database `schema.sql` is run automatically by the **MariaDB Docker image** (README). Without Docker, check whether the tables exist after `bin/migrate.php`; if not, import `src/schema.sql` into the database first (not covered in the README).
+6. **Scheduled jobs** run by hand instead of cron (same commands as in `docker/crontab`): `php bin/shop_changes.php`, `php bin/enrich_pilot.php --all --since=2026-10-16 --limit=500`, `php bin/profile_embeddings.php`, `php src/cleanup.php`.
+
+:::caution[Not documented in the sources]
+- **Serving the HTTP API without Docker.** In the stack, Caddy sends `/endpoint.php`, `/precart.php`, `/health` and the admin pages to PHP-FPM, and rewrites the website routes (`/products`, `/feedback`) to `rc2-controller/site.php`. The sources do not describe a host-only way to serve these. A PHP built-in server would need its own routing for those rewrites; this has not been tested here.
+- **`bin/test`** switches the Docker stack into test mode, so it needs Docker. Static checks (`composer stan`, `composer cs`) are Composer scripts and can run on the host after `composer install` with dev dependencies.
+:::
+
 ## Website: run locally
 
-Two ways, both from the repo README and `frontend/` files:
+Two ways, both from the repo README and `frontend/` files.
+
+**With Docker:**
 
 ```bash
 docker compose --env-file .env -f frontend/compose.yml up -d --build     # http://localhost:8089
 ```
 
-or with Node, using `frontend/.env.example` copied to `.env.local`:
+**Without Docker** (Node.js `>=20.11.0`), using `frontend/.env.example` copied to `.env.local`:
 
 ```bash
 cd frontend
+cp .env.example .env.local
+npm install
 npm run dev
 ```
+
+- With the default `CHAT_BACKEND=mock` the website needs no backend, credentials or network (this is what CI and e2e use).
+- For `CHAT_BACKEND=live`, set `BACKEND_API_URL` (for example `http://localhost:8088`, as in the file's comment) and `RC2_API_KEY` (one of the backend's `RC2_API_KEYS`), and make sure a backend is actually listening there.
+- `npm run verify` runs the type-check, lint and unit tests without Docker.
 
 Frontend environment (names and meaning from `frontend/.env.example`):
 
